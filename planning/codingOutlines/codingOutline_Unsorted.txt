@@ -1,0 +1,128 @@
+//Classes and Objects
+
+class userAccount () {
+	ID, firstName, lastName, acctType, etc.
+}
+
+class userAccount () {
+	ID, firstName, lastName, 
+}
+
+class userAccount () {
+
+}
+
+//Functions, General Banking
+
+function deposit (amt) {
+	this.acct = this.acct + amt
+}
+
+function withdrawal (amt) {
+	if (amt > this.acct) {
+		print "amount requested exceeds available balance"
+	} else {
+		this.acct = this.acct - amt
+	}
+}
+
+function balance () {
+	return this.acct;
+}
+
+//Function, stock buying,selling
+
+class myShare () {
+	index, rate, shareAmt, amoutnTotal, userID, acctNum,
+}
+
+function buyStock (priceOfStock, howMuch) {
+	totalPrice = priceOfStock * howMuch;
+}
+
+function sellStock (sharesSold, currentRate) { 
+	totalAmt = sharesSold * currentRate;
+	this.acct = this.acct + totalAmt
+}
+
+function checkStock (currentRate) {
+	return currentRate
+}
+
+function updateRate () {
+	
+}
+
+function totalIndividualStock (whatYouHave, currentRate) {
+	return whatYouHave * currentRate
+	//This function is called to fill out where individual portfolio pieces are displayed
+}
+
+function totalPortfolio (whatYouHave, currentRate) {
+	//Each stock will need to be stored in an array
+	let portfolio = 
+	
+}
+
+function stockNameUpper (yourStock) {
+	if (!yourStock.isUndefined) {
+		return string.toUppercase(yourStock)
+	} else {
+		console.log("Invalid Ticker Name")
+	}
+}
+
+function stockPrice () {
+	return [RoundingFunctionHere](Math.Random()) * 100;
+}
+
+//Stocks interacting with Your Account Functions
+
+//Account functions
+class userInfo () {
+	idkey, username, email, firstName, lastName, password, etc.
+}
+
+class changePassword(id, password) {
+		userAccount.password = password
+}
+
+function forgotPassword (email, password) {
+	if (email IS FOUND) {
+		userAccount.password = password
+	} else {
+		console.log("There is no account associated with this email.")
+	}
+}
+
+function changeEmail (id, email) {
+	userAccount[id].email = email // We are NOT!! storing accounts in an array
+}
+
+function firstName(id, firstname) {
+	userAccount[id].firstName = firstname
+}
+
+function lastName (id, lastname) {
+	userAccount[id].lastName = lastname
+}
+
+function login (username, password) {
+	//adds user name to top of page, turns access to certain pages to TRUE
+	if (username EXISTS) {
+		if (password === username's password){
+			//Change the login button at top to display their name, turn access
+to internal sites to TRUE
+		} else {
+			console.log("The provided password is incorrect")
+		}
+	} else {
+		console.log("The provided username does not exist")
+	}
+}
+
+function logout () {
+	//removes user name at top of page, turns access to certain pages to FALSE
+	//Code to clear our username and turn access to internal sites FALSE
+	//Redirects user either to welcome page OR login page.
+}
