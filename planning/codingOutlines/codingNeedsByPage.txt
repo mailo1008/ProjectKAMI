@@ -1,0 +1,50 @@
+assessment of needs by page (WIP):
+
+View Stock account:
+
+//Error pages for buying a stock message?-There isn't enough in balance.
+
+when they have no stocks- No stocks to display message?
+
+Graph displaying the performance of stock?
+
+data types: Stock performance? (i.e how much it is worth today), amount of stock available to sell?, 
+
+ 
+
+ 
+
+Creating account:
+
+//If they cannot sign up. like their last name, first name, or entering something in wrong/ if they put in the info and we find the account is already in system, 
+
+provide a link to forgot password for account recovery, where they can their username or reset password 
+
+DOB can only be valid numbers for months, dates, not future dates (years)
+
+First and last name can only contain letters. 
+
+ 
+
+ 
+
+Forgot password:
+
+if they input in the incorrect information, after 3 attempts, or cannot find the account to get the recovery, some sort of message to call. could have a form where they have to contact us, or that 
+
+we cannot locate them in the records. 
+
+For email- must be a valid email
+
+If asking for id or phone number- must be numbers. 
+
+ 
+
+Viewing accounts: 
+
+transactions page- showing transactions- date,  
+
+Balance displayed
+
+withdraw or deposit
+
