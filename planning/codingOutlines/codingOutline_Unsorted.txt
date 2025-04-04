@@ -1,112 +1,151 @@
-//Classes and Objects
+//Objects
 
-class userAccount () {
-	ID, firstName, lastName, acctType, etc.
+class userProfile () {
+	ID, firstName, lastName, etc.
+	getters, setters...
 }
 
-class userAccount () {
-	ID, firstName, lastName, 
+class userAcct () {
+	acctID, amt, associated user
+	//should this be stored as data in db and not as object?
+	//we could also just save space by managing user funds in the userProfile object, probably not ideal real world but fine for our purposes
 }
 
-class userAccount () {
 
+class transaction () {
+	amt, account affected, date, business
+	getters, setters...
 }
 
-//Functions, General Banking
+//Should our stocks be objects? Just in case...
+class stock () {
+	marketName, pricePerStock, etc.
+	getters, setters...
+}
+
+
+//Account management functions
+
+/*
+will need to create an array of objects for transactions, array should hold no more than 10 transactions (for demo purposes), transactions will be represented as objects with amount, account affected, date, and general name of business.
+
+In real world this could get really bloated really fast, however for the purpose of this project it should work for displaying objects
+*/
 
 function deposit (amt) {
-	this.acct = this.acct + amt
+	return yourAcct = yourAccount + amt  //should pull acct amount from data and add the amount being added
+	
 }
 
 function withdrawal (amt) {
+	//Checks if you have enough money in your acct for the withdrawal
 	if (amt > this.acct) {
 		print "amount requested exceeds available balance"
 	} else {
-		this.acct = this.acct - amt
+		// if it passes, subtract the amount for withdrawl
+		 return this.acct = this.acct - amt
 	}
 }
 
-function balance () {
-	return this.acct;
+function transfer (amt) {
+	//moves money from one acct to another
+	//checks if amt is available in original acct
+	let acct1 = this.acct
+	let acct2 = that.acct
+	if (amt > this.acct) {
+		print "amount requested exceeds available balance"
+	} else {
+		//decrease from the requested acct, add to the other
+		acct1 = acct1 - amt;
+		acct2 = acct2 + amt
+	}
 }
 
-//Function, stock buying,selling
-
-class myShare () {
-	index, rate, shareAmt, amoutnTotal, userID, acctNum,
+function balance (acct) {
+	//just returns the current balance
+	return this.acct.balance;
 }
 
-function buyStock (priceOfStock, howMuch) {
+// Stock buying,selling
+
+
+function buyStock (priceOfStock, howMany) {
+	//Takes the price of the stock and how many you are buying, multiplies them together and subtracts from your acct
+	//called to subtract amount from your account
 	totalPrice = priceOfStock * howMuch;
+	this.acct = this.acct - buyStock
 }
 
 function sellStock (sharesSold, currentRate) { 
+	//calculates the amount the stock will sell for and adds it to your acct
 	totalAmt = sharesSold * currentRate;
 	this.acct = this.acct + totalAmt
 }
 
-function checkStock (currentRate) {
-	return currentRate
+function checkStock (stock) {
+	//returns the current price of the requested stock
+	return stock.currentRate
 }
 
 function updateRate () {
-	
+	//this may not be a function needed if we use FinHub API, however in case we need to do one that it just a random number generator
+	//This should check date to see if it has updated once already today. If so, it doesn't do anything
+	//changes the rate of the stock using a random number generator
 }
+
+//Portfoio Functions
 
 function totalIndividualStock (whatYouHave, currentRate) {
 	return whatYouHave * currentRate
-	//This function is called to fill out where individual portfolio pieces are displayed
+	//This function is called to fill out where you individual portfolio pieces are displayed
 }
 
 function totalPortfolio (whatYouHave, currentRate) {
 	//Each stock will need to be stored in an array
-	let portfolio = 
-	
+	let portfolio = []
+	//iterate the array and add the totals together, return a total
 }
 
-function stockNameUpper (yourStock) {
-	if (!yourStock.isUndefined) {
-		return string.toUppercase(yourStock)
-	} else {
-		console.log("Invalid Ticker Name")
-	}
-}
 
+//This is a dummy function in case we cannot get Finhub to work
+//Once working, this will just generate a random number between preset limits to make the current stock price
 function stockPrice () {
-	return [RoundingFunctionHere](Math.Random()) * 100;
+	return [RoundingFunctionHere](Math.Random()) * 100; //code not final
 }
 
 //Stocks interacting with Your Account Functions
 
 //Account functions
-class userInfo () {
-	idkey, username, email, firstName, lastName, password, etc.
-}
 
 class changePassword(id, password) {
+	//this is passed with minimal checking as this should only be called if the user is already logged in
+	//further security can be added as needed
 		userAccount.password = password
 }
 
 function forgotPassword (email, password) {
-	if (email IS FOUND) {
+	//as this will be used if a user forgot, we must validate if their data exists
+	if (email IS FOUND) { //code not final
 		userAccount.password = password
 	} else {
 		console.log("There is no account associated with this email.")
 	}
 }
 
+//The following 3 functions are used when a user is logged in and needs to change their info
 function changeEmail (id, email) {
-	userAccount[id].email = email // We are NOT!! storing accounts in an array
+	userAccount[id].email = email //We are NOT!! storing accounts in an array
 }
 
-function firstName(id, firstname) {
+function changeFirstName(id, firstname) {
 	userAccount[id].firstName = firstname
 }
 
-function lastName (id, lastname) {
+function changeLastName (id, lastname) {
 	userAccount[id].lastName = lastname
 }
 
+//Function to log user in and change the page view and access.
 function login (username, password) {
 	//adds user name to top of page, turns access to certain pages to TRUE
 	if (username EXISTS) {
@@ -121,6 +160,7 @@ to internal sites to TRUE
 	}
 }
 
+//Function to log user out and change the page view and access.
 function logout () {
 	//removes user name at top of page, turns access to certain pages to FALSE
 	//Code to clear our username and turn access to internal sites FALSE
