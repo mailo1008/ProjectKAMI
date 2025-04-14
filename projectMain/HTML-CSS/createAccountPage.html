@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--Head, these are not present in the main body of the page-->
+<!--Should link to CSS sheet as well as any external JS code-->
+
+<head>
+    <!--LINK STYLE SHEET HERE-->
+    <link rel="" href="">
+    <!--LINK JAVASCRIPT HERE-->
+    <link rel="" href="">
+    <title>KAMI Finance</title>
+</head>
+
+<body>
+    <header>
+        <!--Header for the page, this elements should use CSS to float so they are side by side-->
+        <div>
+            <div>
+                <img src="" alt="logo image goes here">
+            </div>
+            <div>
+                <h1>KAMI Finance</h1>
+            </div>
+        </div>
+        <!--Nav bar, will look more pretty with CSS-->
+        <nav>
+            <a href="products.html">Products</a> |
+            <a href="">Contact</a> |
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <h2> Create your account</h2>
+                <p>Please fill in the information below to create your account</p>
+            </div>
+
+            <form name="Create account" onsubmit="return" validateForm(); method="post">
+                <label for="first-name">First name</label>
+                <input type="text" placeholder="Enter First name" name="first-name" required>
+
+                <label for="last-name">Last name</label>
+                <input type="text" placeholder="Enter Last name" name="last-name" required>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" placeholder="MM/DD/YYYY" name="dob" required>
+
+                <label for="email">Email</label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw">Password</label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat">Repeat Password</label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <input type="button" class="submit" value="Create account" name="submit" onclick="validate()" </form>
+
+                <div>
+                <p>Already have an account set up? Log into your account using the button below!</p>
+                    Login boxes placeholder <!--This will come later in production, can create dummy infor for now if preferred-->
+                </div> 
+        </div>
+        <footer>
+            <h3>Products</h3>
+            <h3>Personal</h3>
+            <h3>Contact Us</h3>
+            <h3>About Us</h3>
+            <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
+                likenesses to any person, business, or otherwise
+                is purely coincidental.
+            </p>
+        </footer>
+
+    </body>
+
+</html>
