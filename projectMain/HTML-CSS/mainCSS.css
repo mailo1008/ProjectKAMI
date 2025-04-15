@@ -80,7 +80,7 @@ nav a:hover{
 }
 
 /********************************
-Log in
+Buttons
 ********************************/
 
 button {
@@ -98,4 +98,50 @@ button {
   }
 
 
-button:hover {background-color: var(--main-dark);}
+button:hover {
+    background-color: var(--main-dark);
+}
+
+
+/***********************
+    Log in
+***********************/
+input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    box-shadow: 0 0 10px var(--main-very-dark)
+}
+
+form h2{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+form { 
+    display: inline-block; 
+    text-align: center; 
+    border-radius: 10px;
+}
+
+form *{
+    font-family: 'Verdana';
+    color: var(--main-very-dark);
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.container {
+    text-align: center;
+}
+
+
