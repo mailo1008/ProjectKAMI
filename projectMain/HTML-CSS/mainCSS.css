@@ -73,7 +73,7 @@ nav a:hover{
 #footer{
     color: var(--main-very-light);
     background-color: var(--main-very-dark);
-    position: absolute;
+    position: static;
     bottom: 0;
     width: 100%;
     margin: 0px;
