@@ -3,7 +3,7 @@
     <!--Should link to CSS sheet as well as any external JS code-->
     <head>
         <!--LINK STYLE SHEET HERE-->
-        <link rel="" href="">
+        <link rel="stylesheet" href="mainCSS.css">
         <!--LINK JAVASCRIPT HERE-->
         <link rel="" href="">
         <title>KAMI Finance</title>
@@ -12,22 +12,24 @@
         <header>
             <!--Header for the page, this elements should use CSS to float so they are side by side-->
             <div>
-                <div>
-                    <img src="" alt="logo image goes here">
+                <div class="logo">
+                    <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
                 </div>
-                <div>
+                <div class="text">
                     <h1>KAMI Finance</h1>
                 </div>
-                <div>
-                    Login boxes placeholder <!--This will come later in production, can create dummy infor for now if preferred-->
+                <div class="login">
+                    <a href="login.html">
+                        <button>Log in</button>
+                    </a>
                 </div>
             </div>
         <!--Nav bar, will look more pretty with CSS-->
-        <nav>
-            <a href="">Products</a> | 
-            <a href="">Personal</a> |
-            <a href="">Contact</a> |
-            <a href="">About Us</a>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
         </nav>
         </header>
         <h1>Menu</h1>
@@ -53,8 +55,11 @@
        
         </p>
         </p>
-        <footer>
-            <p>Disclosure: Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any likenesses to any person, business, or otherwise
+        <footer id="footer">
+            <h3>Products</h3>
+            <h3>Contact Us</h3>
+            <h3>About Us</h3>
+            <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any likenesses to any person, business, or otherwise
                 is purely coincidental.
             </p>
         </footer>
