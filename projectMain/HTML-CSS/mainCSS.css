@@ -1,0 +1,93 @@
+/*Main CSS code of Kami Finance*/
+
+/*Primary colors used throughout site*/
+body {
+    --main-very-light: #ECF3E7;
+    --main-light: #9EC383;
+    --main-medium: #6A9849;
+    --main-dark: #3A5328;
+    --main-very-dark: #1C2C11;
+}
+
+body{
+    background-color: var(--main-very-light);
+    margin: 0px;
+    padding: 0px;
+}
+
+/*********************************
+* Heading
+********************************/
+
+header{
+    width:100%;
+    float:left;
+    clear: both;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+header .login{
+    float:right;
+}
+
+/*********************************
+* Navigation Menu
+**********************************/
+
+nav{
+    background-color: var(--main-medium);
+    width: 100%;
+    overflow: auto;
+    
+}
+
+nav a{
+    color: var(--main-very-light);
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+nav a:hover{
+    background-color: var(--main-dark);
+    color: var(--main-very-light);
+}
+
+
+/*********************************
+* Footer
+*********************************/
+#footer{
+    color: var(--main-very-light);
+    background-color: var(--main-very-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+}
+
+/********************************
+Log in
+********************************/
+
+button {
+    background-color: var(--main-medium);
+    border: none;
+    color: var(--main-very-light);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+
+
+button:hover {background-color: var(--main-dark);}
