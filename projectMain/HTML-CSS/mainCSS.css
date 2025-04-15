@@ -1,0 +1,37 @@
+/*Main CSS code of Kami Finance*/
+
+/*Primary colors used throughout site*/
+body {
+    --main-very-light: #ECF3E7;
+    --main-light: #9EC383;
+    --main-medium: #6A9849;
+    --main-dark: #3A5328;
+    --main-very-dark: #1C2C11;
+}
+
+body{
+    background-color: var(--main-very-light);
+}
+
+/*********************************
+* Navigation Menu
+**********************************/
+
+#nav{
+    background-color: var(--main-medium);
+    
+}
+
+#nav:hover{
+    background-color: var(--main-dark);
+    color: var(--main-very-light);
+}
+
+
+/*********************************
+* Footer
+*********************************/
+#footer{
+    color: var(--main-very-light);
+    background-color: var(--main-very-dark)
+}
