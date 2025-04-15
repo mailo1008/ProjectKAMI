@@ -19,16 +19,24 @@ body{
 * Heading
 ********************************/
 
-header{
-    width:100%;
-    float:left;
-    clear: both;
-    padding-top: 25px;
-    padding-bottom: 25px;
+header div{
+    display: inline;
+    padding-top: 15px;
 }
 
-header .login{
+div .text {
+    float: left;
+    padding-left: 10px;
+}
+
+div .logo{
+    padding-left: 15px;
+    float:left;
+}
+
+div .login{
     float:right;
+    padding-right: 15px;
 }
 
 /*********************************
