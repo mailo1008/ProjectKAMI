@@ -35,3 +35,24 @@ body{
     color: var(--main-very-light);
     background-color: var(--main-very-dark)
 }
+
+/********************************
+Log in
+********************************/
+
+button {
+    background-color: var(--main-medium);
+    border: none;
+    color: var(--main-very-light);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+
+
+button:hover {background-color: var(--main-dark);}

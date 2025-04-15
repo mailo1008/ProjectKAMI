@@ -5,7 +5,7 @@
 
 <head>
     <!--LINK STYLE SHEET HERE-->
-    <link rel="" href="">
+    <link rel="stylesheet" href="mainCSS.css">
     <!--LINK JAVASCRIPT HERE-->
     <link rel="" href="">
     <title>KAMI Finance</title>
@@ -23,9 +23,9 @@
             </div>
         </div>
         <!--Nav bar, will look more pretty with CSS-->
-        <nav>
-            <a href="products.html">Products</a> |
-            <a href="">Contact</a> |
+        <nav id="nav">
+            <a href="products.html">Products</a> | 
+            <a href="contact.html">Contact</a> |
             <a href="about.html">About Us</a>
         </nav>
     </header>
@@ -39,11 +39,14 @@
 
             <form name="login" onsubmit="return validateForm()"; method="post">
                 <ul>
-                    <li>Username:<input class="username" type="text" name="username">
+                    <li>
+                        Username:<input class="username" type="text" name="username">
                     </li>
-                    <li>Password:<input class="password" type="text" name="password"></li>
+                    <li>
+                        Password:<input class="password" type="text" name="password">
+                    </li>
                 </ul>
-                <input type="button" class="submit" value="Log In" name="submit" onclick="validate()"/> 
+                <button onclick="validate()">Log in</button>
             </form>
         </div>
 
@@ -52,7 +55,7 @@
             <a href="createAccountPage.html" class="button"> here</a> 
         </p>
 
-        <footer>
+        <footer id="footer">
             <h3>Products</h3>
             <h3>Personal</h3>
             <h3>Contact Us</h3>
