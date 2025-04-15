@@ -11,18 +11,57 @@ body {
 
 body{
     background-color: var(--main-very-light);
+    margin: 0px;
+    padding: 0px;
+}
+
+/*********************************
+* Heading
+********************************/
+
+header div{
+    display: inline;
+    padding-top: 15px;
+}
+
+div .text {
+    float: left;
+    padding-left: 10px;
+}
+
+div .logo{
+    padding-left: 15px;
+    float:left;
+}
+
+div .login{
+    float:right;
+    padding-right: 15px;
 }
 
 /*********************************
 * Navigation Menu
 **********************************/
 
-#nav{
+nav{
     background-color: var(--main-medium);
+    width: 100%;
+    overflow: auto;
     
 }
 
-#nav:hover{
+nav a{
+    color: var(--main-very-light);
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+nav a:hover{
     background-color: var(--main-dark);
     color: var(--main-very-light);
 }
@@ -33,7 +72,11 @@ body{
 *********************************/
 #footer{
     color: var(--main-very-light);
-    background-color: var(--main-very-dark)
+    background-color: var(--main-very-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
 }
 
 /********************************
