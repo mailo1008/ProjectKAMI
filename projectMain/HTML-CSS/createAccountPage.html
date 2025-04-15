@@ -24,61 +24,61 @@
         </div>
         <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
-            <a href="products.html">Products</a> | 
+            <a href="products.html">Products</a> |
             <a href="contact.html">Contact</a> |
             <a href="about.html">About Us</a>
         </nav>
     </header>
 
-    <body>
+    <div class="container">
 
-        <div class="container">
-            <div class="header">
-                <h2> Create your account</h2>
-                <p>Please fill in the information below to create your account.</p>
-            </div>
+        <form name="Create account" onsubmit="return" validateForm(); method="post">
+            <h2> Create your account</h2>
 
-            <form name="Create account" onsubmit="return" validateForm(); method="post">
-                <label for="first-name">First name</label>
-                <input type="text" placeholder="Enter First name" name="first-name" required>
+            <p>Please fill in the information below to create your account.</p>
 
-                <label for="last-name">Last name</label>
-                <input type="text" placeholder="Enter Last name" name="last-name" required>
+            <label for="first-name">First name</label>
+            <input type="text" placeholder="Enter First name" name="first-name" required>
 
-                <label for="dob">Date of Birth</label>
-                <input type="date" placeholder="MM/DD/YYYY" name="dob" required>
+            <label for="last-name">Last name</label>
+            <input type="text" placeholder="Enter Last name" name="last-name" required>
 
-                <label for="email">Email</label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+            <label for="dob">Date of Birth</label>
+            <input type="date" placeholder="MM/DD/YYYY" name="dob" required>
 
-                <label for="psw">Password</label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="email">Email</label>
+            <input type="text" placeholder="Enter Email" name="email" required>
 
-                <label for="psw-repeat">Repeat Password</label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
 
-                <button onclick="validate()">Create account</button>
-            </form>
-            
-            <div>
-                <p>Already have an account set up?</p>
-                <a href="login.html">
-                    <button>Log in</button>
-                </a>
+            <label for="psw-repeat">Repeat Password</label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-            </div>
+            <button onclick="validate()">Create account</button>
+
+
+        </form>
+
+        <div>
+            <p>Already have an account set up?</p>
+            <a href="login.html">
+                <button>Log in</button>
+            </a>
+
         </div>
-        <footer id="footer">
-            <h3>Products</h3>
-            <h3>Personal</h3>
-            <h3>Contact Us</h3>
-            <h3>About Us</h3>
-            <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
-                likenesses to any person, business, or otherwise
-                is purely coincidental.
-            </p>
-        </footer>
+    </div>
+    <footer id="footer">
+        <h3>Products</h3>
+        <h3>Personal</h3>
+        <h3>Contact Us</h3>
+        <h3>About Us</h3>
+        <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
+            likenesses to any person, business, or otherwise
+            is purely coincidental.
+        </p>
+    </footer>
 
-    </body>
+</body>
 
 </html>

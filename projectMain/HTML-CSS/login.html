@@ -33,27 +33,28 @@
     <body>
 
         <div class="container">
-            <div class="header">
-                <h2> Hello, please log into your account</h2>
-            </div>
 
             <form name="login" onsubmit="return validateForm()"; method="post">
-                <ul>
-                    <li>
-                        Username:<input class="username" type="text" name="username">
-                    </li>
-                    <li>
-                        Password:<input class="password" type="text" name="password">
-                    </li>
-                </ul>
-                <button onclick="validate()">Log in</button>
-            </form>
-        </div>
 
-        <a href="forgotPassword.html">Forgot Password?</a>
-        <p> New user? Register
-            <a href="createAccountPage.html" class="button"> here</a> 
-        </p>
+                <h2> Log in to your account</h2>
+
+                <label for="username">Username</label>
+                <input type="text" placeholder="Email" id="username">
+        
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password">
+        
+                <button onclick="validate()">Log in</button>
+
+                <p><a href="forgotPassword.html">Forgot Password?</a>
+                </p>
+                <p> New user? Register
+                    <a href="createAccountPage.html" class="button"> here</a> 
+                </p>
+
+            </form>
+
+        </div>
 
         <footer id="footer">
             <h3>Products</h3>
