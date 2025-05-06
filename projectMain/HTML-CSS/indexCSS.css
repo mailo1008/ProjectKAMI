@@ -1,0 +1,42 @@
+/*Main CSS code of Kami Finance*/
+
+/*Primary colors used throughout site*/
+body {
+    --main-very-light: #ECF3E7;
+    --main-light: #9EC383;
+    --main-medium: #6A9849;
+    --main-dark: #3A5328;
+    --main-very-dark: #1C2C11;
+}
+
+    round1_3 {
+        float:right;
+        clip-path:circle(50%);
+        shape-outside: circle(50%);
+    }
+
+    round2 {
+        float:left;
+        clip-path:circle(50%);
+        shape-outside: circle(50%);
+    }
+
+    social:img {
+        background-color: none;
+        border: none;
+        color: var(--main-very-light);
+        padding: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px  2px;
+        cursor: pointer;
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
+        border-bottom-left-radius: 25%;
+        border-bottom-right-radius: 25%;
+      }
+
+    social:hover{
+        background-color: var(--main-medium)
+    }
