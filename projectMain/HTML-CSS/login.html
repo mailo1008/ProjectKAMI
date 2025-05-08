@@ -24,8 +24,8 @@
         </div>
         <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
-            <a href="products.html">Products</a> 
-            <a href="contact.html">Contact</a> 
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
             <a href="about.html">About Us</a>
         </nav>
     </header>
@@ -34,26 +34,28 @@
 
         <div class="container">
 
-            <form action="Menu.html">
+            <form id="loginForm">
 
                 <h2> Log in to your account</h2>
 
                 <label for="username">Username</label>
                 <input type="text" placeholder="Email" id="username">
-        
+
                 <label for="password">Password</label>
                 <input type="password" placeholder="Password" id="password">
-        
-                <button>Log in</button>
+
+                <button type="submit">Log in</button>
+
+                <p id="incorrectLogin"></p>
 
                 <p><a href="forgotPassword.html">Forgot Password?</a>
                 </p>
                 <p> New user? Register
-                    <a href="createAccountPage.html"> here</a> 
+                    <a href="createAccountPage.html"> here</a>
                 </p>
 
             </form>
-
+            <script src="loginForm.js"></script>
         </div>
 
         <footer id="footer">
