@@ -1,29 +1,31 @@
 <html>
-    <!--Head, these are not present in the main body of the page-->
-    <!--Should link to CSS sheet as well as any external JS code-->
-    <head>
-        <!--LINK STYLE SHEET HERE-->
-        <link rel="stylesheet" href="mainCSS.css">
-        <!--LINK JAVASCRIPT HERE-->
-        <link rel="" href="">
-        <title>KAMI Finance</title>
-    </head>
-    <body>
-        <header>
-            <!--Header for the page, this elements should use CSS to float so they are side by side-->
-            <div>
-                <div class="logo">
-                    <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
-                </div>
-                <div class="text">
-                    <h1>KAMI Finance</h1>
-                </div>
-                <div class="login">
-                    <a href="index.html">
-                    <button type="button" onclick="alert('Have a wonderful day!')">Log Out</button>
-                    </a>
-                </div>
+<!--Head, these are not present in the main body of the page-->
+<!--Should link to CSS sheet as well as any external JS code-->
+
+<head>
+    <!--LINK STYLE SHEET HERE-->
+    <link rel="stylesheet" href="mainCSS.css">
+    <!--LINK JAVASCRIPT HERE-->
+    <link rel="" href="">
+    <title>KAMI Finance</title>
+</head>
+
+<body>
+    <header>
+        <!--Header for the page, this elements should use CSS to float so they are side by side-->
+        <div>
+            <div class="logo">
+                <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
             </div>
+            <div class="text">
+                <h1>KAMI Finance</h1>
+            </div>
+            <div class="login">
+                <a href="index.html">
+                    <button type="button" onclick="alert('Have a wonderful day!')">Log Out</button>
+                </a>
+            </div>
+        </div>
         <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
             <a href="index.html">Home</a>
@@ -31,29 +33,44 @@
             <a href="contact.html">Contact</a>
             <a href="about.html">About Us</a>
         </nav>
-        </header>
-        <h1 id="usernameDisplay"></h1>
-        <script src="usernameDisplay.js"></script>
-       <aria-label= "Stock value">
-                <h2>Stock Value<summary></h2>
-                    <p>$100,000(4,000 shares)</p>
+    </header>
 
-             <aria-label= "Cash Summary">
+    <h1 id="usernameDisplay"></h1>
+    <script src="usernameDisplay.js"></script>
+
+    <div class="accountValue-wrapper">
+        <div id="boxstyle">
+            <div class="section-container">
+                <h2>Stock Value </h2>
+                <p>$100,000(4,000 shares)</p>
+                <p>I want to..</p>
+            </div>
+
+            <div class="section-container">
                 <h2>Cash Summary</h2>
                 <p>$25,000</p>
+            </div>
+        </div>
+        <div class="stockDummyGraph">
+            <h2>All Stocks Performance</h2>
+        <img class="stockDummyGraph" src="../img/stockDummyGraph.png">
+        </div>
+    </div>
 
-        <!--Main body text and images go here-->
-        <p>Available(stocks available to sell)</p>
-        <p>Unavailable(Cash awaiting to invest)</p>
+
+    <!--Main body text and images go here-->
+    <p>Available(stocks available to sell)</p>
+    <p>Unavailable(Cash awaiting to invest)</p>
+
+    <footer id="footer">
+        <h3>Products</h3>
+        <h3>Contact Us</h3>
+        <h3>About Us</h3>
+        <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
+            likenesses to any person, business, or otherwise
+            is purely coincidental.
         </p>
-        </p>
-        <footer id="footer">
-            <h3>Products</h3>
-            <h3>Contact Us</h3>
-            <h3>About Us</h3>
-            <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any likenesses to any person, business, or otherwise
-                is purely coincidental.
-            </p>
-        </footer>
-    </body>
+    </footer>
+</body>
+
 </html>

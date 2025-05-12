@@ -10,7 +10,7 @@ const messageElement = document.getElementById("incorrectLogin");
 let isLoggedIn= false;
 
 //set up function to validate the user to log into account
-loginForm.addEventListener("submit", function(event) {
+loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const usernameInput = document.getElementById("username").value;
@@ -18,7 +18,6 @@ loginForm.addEventListener("submit", function(event) {
 
     if (users[usernameInput] === passwordInput) {
         const username= usernameInput.split('@')[0];
-        const welcomeMessage = `Welcome, ${username}!`;
         window.location.href= `Account Value.html?user=${encodeURIComponent(username)}`;
         isLoggedIn= true;
     } else {
