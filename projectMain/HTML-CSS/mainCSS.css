@@ -9,7 +9,7 @@ body {
     --main-very-dark: #1C2C11;
 }
 
-body{
+body {
     background-color: var(--main-very-light);
     margin: 0px;
     padding: 0px;
@@ -19,7 +19,7 @@ body{
 * Heading
 ********************************/
 
-header div{
+header div {
     display: inline;
     padding-top: 15px;
 }
@@ -29,13 +29,13 @@ div .text {
     padding-left: 10px;
 }
 
-div .logo{
+div .logo {
     padding-left: 15px;
-    float:left;
+    float: left;
 }
 
-div .login{
-    float:right;
+div .login {
+    float: right;
     padding-right: 15px;
 }
 
@@ -43,14 +43,14 @@ div .login{
 * Navigation Menu
 **********************************/
 
-nav{
+nav {
     background-color: var(--main-medium);
     width: 100%;
     overflow: auto;
-    
+
 }
 
-nav a{
+nav a {
     color: var(--main-very-light);
     text-decoration: none;
     float: left;
@@ -61,7 +61,7 @@ nav a{
     padding-bottom: 12px;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: var(--main-dark);
     color: var(--main-very-light);
 }
@@ -70,7 +70,7 @@ nav a:hover{
 /*********************************
 * Footer
 *********************************/
-#footer{
+#footer {
     color: var(--main-very-light);
     background-color: var(--main-very-dark);
     position: static;
@@ -95,7 +95,7 @@ button {
     cursor: pointer;
     border-radius: 16px;
     font-size: 16px;
-  }
+}
 
 
 button:hover {
@@ -106,11 +106,11 @@ button:hover {
 /***********************
    Forms 
 ***********************/
-input{
+input {
     display: block;
     height: 40px;
     width: 100%;
-    background-color: rgba(255,255,255,0.07);
+    background-color: rgba(255, 255, 255, 0.07);
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
@@ -119,28 +119,29 @@ input{
     box-shadow: 0 0 10px var(--main-very-dark)
 }
 
-form h2{
+form h2 {
+    font-family: 'Verdana';
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
 
-form { 
-    display: inline-block; 
-    text-align: center; 
+form {
+    display: inline-block;
+    text-align: center;
     border-radius: 10px;
 }
 
-form *{
-    font-family: 'Verdana';
+form * {
+    font-family: 'Trebuchet MS';
     color: var(--main-very-dark);
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
 
-label{
+label {
     display: block;
     margin-top: 30px;
     font-size: 16px;
@@ -152,7 +153,82 @@ label{
     text-align: center;
 }
 
-#incorrectLogin{
-    color :red;
+#incorrectLogin {
+    color: red;
 }
 
+/**************
+Styling for all pages
+***************/
+body h2 {
+    font-family: 'Verdana';
+}
+
+/**************************8
+  Account Value, Pillbox with Text
+  ********************************/
+#boxstyle {
+    background-color: var(--main-very-light);
+    border-radius: 25px;
+    padding: 15px;
+    width: 100%;
+  }
+
+/* Create container for each section */
+.section-container {
+    background-color: var(--main-very-dark);
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: var(--main-very-light);
+}
+
+/* Alternate background color for even sections */
+.section-container:nth-of-type(even) {
+    background-color: var(--main-light);
+    color: var(--main-very-dark)
+}
+
+/* Style for h2 and p elements inside containers */
+.section-container h2 {
+    margin: 5px 0;
+    font-family: "Verdana";
+}
+
+.section-container p {
+    margin: 5px 0;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Trebuchet MS';
+}
+
+/***************************
+Account Value Page
+***************************/
+.accountValue-wrapper {
+    display: flex;
+    gap: 20px;
+    /* Space between elements */
+    align-items: flex-start;
+}
+
+.stockDummyGraph {
+    border-radius: 20px;
+    margin-right: 15px;
+    margin-top: 14px;
+    width: 950px;
+    height: auto;
+    background-color: var(--main-light);
+}
+.stockDummyGraph h2 {
+    margin: 15px 
+}
+
+/*** styling for UsernameDisplay */
+
+#usernameDisplay {
+    font-family: 'Verdana';
+    margin: 10px left;
+    padding: 20px;
+}
