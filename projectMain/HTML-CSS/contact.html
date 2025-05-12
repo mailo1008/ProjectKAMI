@@ -1,29 +1,31 @@
 <html>
-    <!--Head, these are not present in the main body of the page-->
-    <!--Should link to CSS sheet as well as any external JS code-->
-    <head>
-        <!--LINK STYLE SHEET HERE-->
-        <link rel="stylesheet" href="mainCSS.css">
-        <!--LINK JAVASCRIPT HERE-->
-        <link rel="" href="">
-        <title>KAMI Finance</title>
-    </head>
-    <body>
-        <header>
-            <!--Header for the page, this elements should use CSS to float so they are side by side-->
-            <div>
-                <div class="logo">
-                    <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
-                </div>
-                <div class="text">
-                    <h1>KAMI Finance</h1>
-                </div>
-                <div class="login">
-                    <a href="login.html">
-                        <button>Log in</button>
-                    </a>
-                </div>
+<!--Head, these are not present in the main body of the page-->
+<!--Should link to CSS sheet as well as any external JS code-->
+
+<head>
+    <!--LINK STYLE SHEET HERE-->
+    <link rel="stylesheet" href="mainCSS.css">
+    <!--LINK JAVASCRIPT HERE-->
+    <link rel="" href="">
+    <title>KAMI Finance</title>
+</head>
+
+<body>
+    <header>
+        <!--Header for the page, this elements should use CSS to float so they are side by side-->
+        <div>
+            <div class="logo">
+                <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
             </div>
+            <div class="text">
+                <h1>KAMI Finance</h1>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <button>Log in</button>
+                </a>
+            </div>
+        </div>
         <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
             <a href="index.html">Home</a>
@@ -31,36 +33,38 @@
             <a href="contact.html">Contact</a>
             <a href="about.html">About Us</a>
         </nav>
-        </header>
-        <!--Main body text and images go here-->
-        <p>
-            Have questions? Need to speak with a consultant? Want to provide feedback? Get in touch with us!
+    </header>
+    <!--Main body text and images go here-->
+    <div class="contactUsContainer">
+    <!--Form used to submit feedback, will just cycle back to a page saying it was submitted-->
+        <form action="thankYouFeedback.html">
+            <h2>How can we help?</h2>
+            <p>Have questions? Need to speak with a consultant? Want to provide feedback? Get in touch with us!</p>
+            <select>
+                <option>Requesting Consultation</option>
+                <option>General Question</option>
+                <option>Issue with site</option>
+            </select><br>
+            <label>Your name</label>
+            <input type="" text"><br>
+            <label>Email address</label>
+            <input type="" text"><br>
+            <label>Additional information</label>
+            <textarea rows="10" cols="30"></textarea><br>
+            <input type="submit">
+        </form>
+    </div>
+    <!--Footer for bottom of page-->
+    <!--Includes written out nav bar, contact info, social media buttons, etc.-->
+    <footer id="footer">
+        <h3>Products</h3>
+        <h3>Contact Us</h3>
+        <h3>About Us</h3>
+        <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
+            likenesses to any person, business, or otherwise
+            is purely coincidental.
         </p>
-            <!--Form used to submit feedback, will just cycle back to a page saying it was submitted-->
-            <form>
-                <label>How can we help?</label>
-                    <select>
-                        <option>Requesting Consultation</option>
-                        <option>General Question</option>
-                        <option>Issue with site</option>
-                    </select><br>
-                <label>Your name</label>
-                <input type=""text"><br>
-                <label>Email address</label>
-                <input type=""text"><br>
-                <label>Additional information</label>
-                <textarea rows="10" cols="30"></textarea><br>
-                <input type="submit">
-            </form>
-        <!--Footer for bottom of page-->
-        <!--Includes written out nav bar, contact info, social media buttons, etc.-->
-        <footer id="footer">
-            <h3>Products</h3>
-            <h3>Contact Us</h3>
-            <h3>About Us</h3>
-            <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any likenesses to any person, business, or otherwise
-                is purely coincidental.
-            </p>
-        </footer>
-    </body>
+    </footer>
+</body>
+
 </html>

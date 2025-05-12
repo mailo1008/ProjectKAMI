@@ -232,3 +232,77 @@ Account Value Page
     margin: 10px left;
     padding: 20px;
 }
+
+/******************
+  Contact Us page
+******************/
+
+.contactUsContainer {
+    text-align: center;
+}
+
+select {
+    border: 2px solid var(--main-very-light);
+    background: var(--main-medium);
+    padding: 10px;
+    transition: 0.4s;
+    width: 30%;
+    border-radius: 15px;
+    color: var(--main-very-light);
+  }
+  
+  select:hover,
+  select:focus {
+    background: var(--main-dark);
+  }
+
+ option {
+    color:var(--main-very-light);
+ }
+
+  .contactUsContainer form{
+    width:50%
+  }
+  
+  input[type=submit] {
+    background: var(--main-medium);
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--main-very-light);
+    width: 40%;
+    color: var(--main-very-light);
+    margin-left: auto;
+    margin-right:auto;
+    box-shadow: none;
+  }
+
+  input[type=submit]:hover {
+    background: var(--main-dark)
+  }
+
+  textarea {
+    width:723px;
+    height:118px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--main-very-dark)
+  }
+
+  .thankYouBody{
+    min-height: 57vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .linkSentContainer {
+    text-align: center;
+    min-height: 55vh;
+    justify-content: center;
+    }
+
+  
+  
+
+
