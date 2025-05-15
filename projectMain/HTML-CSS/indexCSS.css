@@ -9,27 +9,85 @@ body {
     --main-very-dark: #1C2C11;
 }
 
-    round1_3 {
-        float:right;
-        clip-path:circle(50%);
-        shape-outside: circle(50%);
+/*To position footer and body without overlapping footer*/
+
+.bulkbody{
+        min-height: 100vh;
+        display: inline;
+        flex-direction: column;
+        margin: 100px;
     }
 
-    round2 {
-        float:left;
-        clip-path:circle(50%);
-        shape-outside: circle(50%);
+    video{
+        display:block;
+        padding-top: 10px;
+        margin: auto;
+        width: 99%;
+        height: auto;
     }
 
+    /*Aligning header and text to images within body*/
+    h2 {
+        text-align: center;
+        justify-content: center;
+        padding-top: 40px;
+        
+        
+    }
+
+    p {text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-block: 30px;
+        max-width: 500px;
+    }
+    
+        .content-wrapper::after {
+            content:"";
+            clear:both;
+            display:flex;
+       }
+       /*Circlural images used within body*/
+        round1 {
+            margin-top: 50px;
+            margin-bottom: 100px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+
+        round2 {
+            margin-top: 50px;
+            margin-bottom: 100px;
+            margin-right: 10px;
+            margin-left: 100px;
+            float:left;
+            clip-path:circle(50%);
+            shape-outside: circle(20%);
+        } 
+
+        round3 {
+            margin-top: 50px;
+            margin-bottom: 100px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+    
+    /*Social media icons within the footer*/
     social:img {
         background-color: none;
         border: none;
         color: var(--main-very-light);
-        padding: none;
+        padding-right: 5px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        margin: 4px  2px;
+        margin: 4px  4px;
         cursor: pointer;
         border-top-left-radius: 25%;
         border-top-right-radius: 25%;
