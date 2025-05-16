@@ -1,0 +1,81 @@
+<html>
+    <!--Head, these are not present in the main body of the page-->
+    <!--Should link to CSS sheet as well as any external JS code-->
+    <head>
+        <!--LINK STYLE SHEET HERE-->
+        <link rel="stylesheet" href="mainCSS.css">
+        <!--LINK JAVASCRIPT HERE-->
+        <link rel="" href="">
+        <title>KAMI Finance</title>
+    </head>
+    <body>
+        <header>
+        <!--Header for the page, this elements should use CSS to float so they are side by side-->
+        <div>
+            <div class="logo">
+                <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
+            </div>
+            <div class="text">
+                <h1>KAMI Finance</h1>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <button style="float:right;">Log in</button>
+                </a>
+            </div>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+        <!--Main body text and images go here-->
+        <h1>Buy/Sell Stock</h1>
+            <br/>
+            Graph image goes here
+            <h4>Buy/Sell</h4>
+            <input type="radio" id="radiobutton">
+
+            <h4>Select Stock</h4>
+            <select name="stock" id="stock">
+                <option value="aapl">Apple (AAPL)</option>
+                <option value="amzn">Amazon (AMZN)</option>
+                <option value="dash">Doordash (DASH)</option>
+                <option value="nvda">NVidia (NVDA)</option>
+            </select>
+
+            <h4>Amount</h4>
+            
+
+            <h3>Amount to sell</h3>
+        <!--Footer for bottom of page-->
+        <!--Includes written out nav bar, contact info, social media buttons, etc.-->
+        <footer id="footer">
+        <head>
+            <!--LINK STYLE SHEET HERE-->
+            <link rel="stylesheet" href="indexCSS.css">
+            <!--LINK JAVASCRIPT HERE-->
+            <link rel="" href="">
+        </head>
+        <div id="social">
+            <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
+                        alt="fb icon" width="30px" height="30px"></a></social>
+            <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
+                        alt="insta icon" width="30px" height="30px"></a></social>
+            <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
+                        alt="twitter icon" width="30px" height="30px"></a></social>
+        </div>
+        <br/>
+        <br/>
+        <div id="footerNav">
+            <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+        </div>
+        <br/>
+        <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
+            likenesses to any person, business, or products/services is purely coincidental.
+        </p>
+    </footer>
+    </body>
+</html>
