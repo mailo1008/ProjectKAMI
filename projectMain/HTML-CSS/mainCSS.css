@@ -13,6 +13,7 @@ body {
     background-color: var(--main-very-light);
     margin: 0px;
     padding: 0px;
+    min-height: 100vh;
 }
 
 /*********************************
@@ -70,13 +71,25 @@ nav a:hover {
 /*********************************
 * Footer
 *********************************/
-#footer {
+footer {
     color: var(--main-very-light);
     background-color: var(--main-very-dark);
-    position: static;
+    clear: both;
+    position: relative;
     bottom: 0;
-    width: 100%;
-    margin: 0px;
+    min-height: 50px;
+    /*width: 100%;
+    margin: 0px;*/
+}
+
+#footernav {
+    /*vertical-align: middle;*/
+    text-align: center;
+}
+
+#footernav a {
+    text-decoration: none;
+    color: var(--main-light)
 }
 
 /********************************
@@ -100,6 +113,14 @@ button {
 
 button:hover {
     background-color: var(--main-dark);
+}
+
+#radiobutton {
+    transform: none;
+    box-shadow: none;
+    height: 20px;
+    width: 20px;
+    accent-color:var(--main-medium)
 }
 
 

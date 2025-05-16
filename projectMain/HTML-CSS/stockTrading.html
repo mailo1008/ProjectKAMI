@@ -1,17 +1,15 @@
 <html>
-<!--Head, these are not present in the main body of the page-->
-<!--Should link to CSS sheet as well as any external JS code-->
-
-<head>
-    <!--LINK STYLE SHEET HERE-->
-    <link rel="stylesheet" href="mainCSS.css">
-    <!--LINK JAVASCRIPT HERE-->
-    <link rel="" href="">
-    <title>KAMI Finance</title>
-</head>
-
-<body>
-    <header>
+    <!--Head, these are not present in the main body of the page-->
+    <!--Should link to CSS sheet as well as any external JS code-->
+    <head>
+        <!--LINK STYLE SHEET HERE-->
+        <link rel="stylesheet" href="mainCSS.css">
+        <!--LINK JAVASCRIPT HERE-->
+        <link rel="" href="">
+        <title>KAMI Finance</title>
+    </head>
+    <body>
+        <header>
         <!--Header for the page, this elements should use CSS to float so they are side by side-->
         <div>
             <div class="logo">
@@ -22,11 +20,10 @@
             </div>
             <div class="login">
                 <a href="login.html">
-                    <button>Log in</button>
+                    <button style="float:right;">Log in</button>
                 </a>
             </div>
         </div>
-        <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
@@ -34,29 +31,28 @@
             <a href="about.html">About Us</a>
         </nav>
     </header>
-    <div class="container">
-        <form action="forgotPasswordLinkSent.html">
+        <!--Main body text and images go here-->
+        <h1>Buy/Sell Stock</h1>
+            <br/>
+            Graph image goes here
+            <h4>Buy/Sell</h4>
+            <input type="radio" id="radiobutton">
 
-            <h2>Forgot your password?</h2>
-            <p>Please enter in the email associated with your KAMI account, we will send a link to that email to reset
-                your password!
-            </p>
+            <h4>Select Stock</h4>
+            <select name="stock" id="stock">
+                <option value="aapl">Apple (AAPL)</option>
+                <option value="amzn">Amazon (AMZN)</option>
+                <option value="dash">Doordash (DASH)</option>
+                <option value="nvda">NVidia (NVDA)</option>
+            </select>
 
-            <label for="email">Email</label>
-            <input type="email" />
+            <h4>Amount</h4>
+            
 
-            <label for="email-verify">Confirm email</label>
-            <input type="email" />
-
-            <a href="forgotPasswordLinkSent.html">
-                <button>Send link</button>
-            </a>
-
-        </form>
-    </div>
-
-
-    <footer id="footer">
+            <h3>Amount to sell</h3>
+        <!--Footer for bottom of page-->
+        <!--Includes written out nav bar, contact info, social media buttons, etc.-->
+        <footer id="footer">
         <head>
             <!--LINK STYLE SHEET HERE-->
             <link rel="stylesheet" href="indexCSS.css">
@@ -74,13 +70,12 @@
         <br/>
         <br/>
         <div id="footerNav">
-            <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+            <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
         </div>
         <br/>
         <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
             likenesses to any person, business, or products/services is purely coincidental.
         </p>
     </footer>
-</body>
-
+    </body>
 </html>
