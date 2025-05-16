@@ -225,6 +225,38 @@ Account Value Page
     margin: 15px 
 }
 
+.dropdown {
+    float: right;
+    padding:16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-very-light);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right:0;
+  }
+  /*styling for content */
+  .dropdown-content a{
+    color: var(--main-very-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display:block;
+    font-family: Verdana;
+  }
+
+  .dropdown-content a:hover {
+    background-color: var(--main-light);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
 /*** styling for UsernameDisplay */
 
 #usernameDisplay {
