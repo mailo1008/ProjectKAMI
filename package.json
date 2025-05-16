@@ -1,0 +1,28 @@
+{
+  "name": "projectkami",
+  "version": "1.0.0",
+  "description": "an educational test of the use of github for collaboration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KermannSE/ProjectKAMI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KermannSE/ProjectKAMI/issues"
+  },
+  "homepage": "https://github.com/KermannSE/ProjectKAMI#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "ms": "^2.1.3",
+    "msnodesqlv8": "^4.5.0",
+    "mssql": "^11.0.1"
+  }
+}
