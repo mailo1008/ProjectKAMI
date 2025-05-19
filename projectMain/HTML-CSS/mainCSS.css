@@ -115,13 +115,6 @@ button:hover {
     background-color: var(--main-dark);
 }
 
-#radiobutton {
-    transform: none;
-    box-shadow: none;
-    height: 20px;
-    width: 20px;
-    accent-color:var(--main-medium)
-}
 
 
 /***********************
@@ -176,6 +169,13 @@ label {
 
 #LoginMessage {
     color: red;
+}
+
+.buysellform{
+    text-align: center;
+    height: auto;
+    box-shadow: none;
+    display:block;
 }
 
 /**************

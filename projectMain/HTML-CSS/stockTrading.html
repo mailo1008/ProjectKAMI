@@ -34,22 +34,31 @@
         <!--Main body text and images go here-->
         <h1>Buy/Sell Stock</h1>
             <br/>
-            Graph image goes here
-            <h4>Buy/Sell</h4>
-            <input type="radio" id="radiobutton">
+            <div>
+                Graph image here
+            </div>
+            <div>
+                <form class="buysellform">
+                <h4>Buy/Sell</h4>
+                <input type="radio" class="buysellform" id="buy" name="buysell">Buy |
+                <input type="radio" class="buysellform" id="sell" name="buysell">Sell
+                    <br/>
+                <h4>Select Stock</h4>
+                <select name="stock" id="stock">
+                    <option value="">---Select a Stock---</option>
+                    <option value="aapl">Apple (AAPL)</option>
+                    <option value="amzn">Amazon (AMZN)</option>
+                    <option value="dash">Doordash (DASH)</option>
+                    <option value="nvda">NVidia (NVDA)</option>
+                </select>
 
-            <h4>Select Stock</h4>
-            <select name="stock" id="stock">
-                <option value="aapl">Apple (AAPL)</option>
-                <option value="amzn">Amazon (AMZN)</option>
-                <option value="dash">Doordash (DASH)</option>
-                <option value="nvda">NVidia (NVDA)</option>
-            </select>
+                <h4>Amount</h4>
+                <input type="number" id="amount" name="amount" size="6"><br/>
 
-            <h4>Amount</h4>
+                <input type="submit" value="Submit Request"><br/>
+            </form>
+            </div>
             
-
-            <h3>Amount to sell</h3>
         <!--Footer for bottom of page-->
         <!--Includes written out nav bar, contact info, social media buttons, etc.-->
         <footer id="footer">
