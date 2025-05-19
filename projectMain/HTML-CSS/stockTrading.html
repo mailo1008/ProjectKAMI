@@ -5,7 +5,7 @@
         <!--LINK STYLE SHEET HERE-->
         <link rel="stylesheet" href="mainCSS.css">
         <!--LINK JAVASCRIPT HERE-->
-        <link rel="" href="">
+        <script src="..\JS\stockFunctions.js"></script>
         <title>KAMI Finance</title>
     </head>
     <body>
@@ -34,30 +34,33 @@
         <!--Main body text and images go here-->
         <h1>Buy/Sell Stock</h1>
             <br/>
-            <div>
-                Graph image here
-            </div>
-            <div>
-                <form class="buysellform">
-                <h4>Buy/Sell</h4>
-                <input type="radio" class="buysellform" id="buy" name="buysell">Buy |
-                <input type="radio" class="buysellform" id="sell" name="buysell">Sell
-                    <br/>
-                <h4>Select Stock</h4>
-                <select name="stock" id="stock">
-                    <option value="">---Select a Stock---</option>
-                    <option value="aapl">Apple (AAPL)</option>
-                    <option value="amzn">Amazon (AMZN)</option>
-                    <option value="dash">Doordash (DASH)</option>
-                    <option value="nvda">NVidia (NVDA)</option>
-                </select>
-
-                <h4>Amount</h4>
-                <input type="number" id="amount" name="amount" size="6"><br/>
-
-                <input type="submit" value="Submit Request"><br/>
-            </form>
-            </div>
+            <img id="graphImage" style="display:block; margin-left: auto; margin-right: auto;">
+            <div class="container">
+    <form id="tradeForm" onsubmit="handleTrade(event), calculatePreview()">
+        <h4>Buy/Sell</h4>
+        <label class="switch">
+            <input type="checkbox" id="modeToggle" onclick="toggleSellMode()">
+            <span class="slider"></span>
+            <span class="buySell" id="buyingSelling">Buy</span>
+        </label>
+        <br/>
+        <h4>Select Stock</h4>
+        <select name="stock" id="stock" required onchange="calculatePreview()">
+            <option value="">---Select a Stock---</option>
+            <option value="AAPL">Apple (AAPL)</option>
+            <option value="AMZN">Amazon (AMZN)</option>
+            <option value="DASH">Doordash (DASH)</option>
+            <option value="NVDA">NVidia (NVDA)</option>
+        </select>
+        <div id="currentOwned"></div>
+        <div id="currentPrice"></div>
+        <h4>Amount</h4>
+        <input type="number" id="amount" name="amount" min="1" required onchange="calculatePreview()"><br/>
+        <div id="costPreview"></div>
+        <input type="submit" value="Submit Request"><br/>
+    </form>
+    <div id="tradeResult"></div>
+</div>
             
         <!--Footer for bottom of page-->
         <!--Includes written out nav bar, contact info, social media buttons, etc.-->

@@ -355,7 +355,92 @@ select {
     justify-content: center;
     }
 
-  
-  
+/********************8
+* BuySell Button Container
+**********************/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px;
+}
 
+.switch input {
+    width: auto;
+    height: auto;
+    opacity: 0;
+}
 
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-light);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--main-very-light);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--main-dark);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.buySell {
+    position: absolute;
+    left: 70px;
+    top: 8px;
+    font-weight: bold;
+}
+
+.container form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.container select,
+.container input[type="number"] {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.container input[type="submit"] {
+    width: 200px;
+    margin: 20px auto;
+}
+
+/*******************
+* Display Transaction
+*******************/
+
+.transaction-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--main-light);
+    border-radius: 10px;
+    color: var(--main-very-dark);
+}
+
+.transaction-result p {
+    margin: 5px 0;
+}
