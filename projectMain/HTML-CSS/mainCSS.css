@@ -355,6 +355,104 @@ select {
     justify-content: center;
     }
 
+
+/***************************
+Products Page
+***************************/
+
+/*To position footer and body without overlapping footer*/
+
+/*gallery*/
+
+img.products {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bulkbody-products {
+        min-height: 100vh;
+        display: column;
+        flex-direction: column;
+        margin: 50px;
+    }
+/*used to wrap text with imgs*/
+    .container-products {
+        position: relative;
+    }
+
+.content-wrapper-products::after {
+            display: flex;
+            align-items:center;
+            justify-content: center
+       }
+
+/***************************
+About Us Page
+***************************/
+/* Text content to fit around images*/
+
+.outerbulk {
+    margin: 10px;
+    padding: 50px;
+}
+.bulkbody_about{
+        min-height: 100vh;
+        display: inline;
+        flex-direction: column;
+        margin: 100px;
+    }
+
+     h2 {
+        text-align: center;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-block: 10px;
+        max-width: 500px;
+    }
+    
+    .content-wrapper-about::after {
+            content:"";
+            clear:both;
+            display:flex;
+       }
+
+ /*Circular images used within body*/
+        about1 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+
+        about2 {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            margin-right: 10px;
+            margin-left: 100px;
+            float:left;
+            clip-path:circle(50%);
+            shape-outside: circle(20%);
+        } 
+
+        about3 {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+
 /********************8
 * BuySell Button Container
 **********************/
@@ -444,3 +542,4 @@ input:checked + .slider:before {
 .transaction-result p {
     margin: 5px 0;
 }
+
