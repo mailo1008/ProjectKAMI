@@ -13,27 +13,29 @@ body {
 
 .bulkbody{
         min-height: 100vh;
-        display: inline;
+        display: flex;
         flex-direction: column;
-        margin: 100px;
+        margin: auto;
     }
 
-    video{
-        display:block;
-        padding-top: 10px;
-        margin: auto;
-        width: 99%;
-        height: auto;
-    }
+    /* Container needed to position the overlay. Adjust the width as needed */
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5em;
+    padding: 10px;
+    margin: auto;
+}
+    
 
     /*Aligning header and text to images within body*/
     h2 {
         text-align: center;
         justify-content: center;
         padding-top: 40px;
-        
-        
-    }
+    }  
+    
 
     p {text-align: center;
         margin-left: auto;
@@ -46,11 +48,18 @@ body {
             content:"";
             clear:both;
             display:flex;
-       }
-       /*Circlural images used within body*/
+            position: absolute;
+        }
+       
+        #rounds {
+             position: relative;
+            z-index: 2;
+        }
+
+       /*Circular images used within body */
         round1 {
             margin-top: 50px;
-            margin-bottom: 100px;
+            margin-bottom: 50px;
             margin-right: 100px;
             margin-left: 10px;
             float:right;
@@ -59,8 +68,8 @@ body {
         }
 
         round2 {
-            margin-top: 50px;
-            margin-bottom: 100px;
+            margin-top: 10px;
+            margin-bottom: 50px;
             margin-right: 10px;
             margin-left: 100px;
             float:left;
@@ -69,14 +78,31 @@ body {
         } 
 
         round3 {
-            margin-top: 50px;
-            margin-bottom: 100px;
+            margin-top: 10px;
+            margin-bottom: 50px;
             margin-right: 100px;
             margin-left: 10px;
             float:right;
             clip-path:circle(50%);
             shape-outside: circle(20%); 
         }
+
+/*placement of bamboo img to allow overlapping of other texts and imgs*/
+    img[src*="bamboo5"] {
+    position: absolute;
+    z-index: 2;
+    bottom: -38;
+    width: 43.4%;
+    opacity: .40;
+    margin: 10px;
+    }
+
+.content-wrapper {
+    position: relative;
+    z-index: 3;
+} 
+
+
     
     /*Social media icons within the footer*/
     social:img {
