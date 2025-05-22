@@ -19,24 +19,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'projectMain', 'HTML-CSS', 'index.html'));
 });
 
-//Kermann
-const sql = require('mssql/msnodesqlv8');  // Windows Auth driver
-const path = require('path');
-
-const app = express();
-const PORT = 3000;
-
 //app.use(cors());
 //app.use(express.json());
 
-// SQL Server config authentication
+//SQL Server connection with Windows Authentication 
+
+const sql = require('mssql/msnodesqlv8');
+const { NVarChar } = require('msnodesqlv8');
 const config = {
-  server: 'localhost',
-  database: 'projectKAMIDB',
-  driver: 'msnodesqlv8',
-  options: {
-    trustedConnection: true
-  }
+    server: 'localhost',
+    database: 'KAMI_DB',
+    driver: 'msnodesqlv8',
+    options: {
+        trustedConnection: true,
+        trustServerCertificate: true
+    }
 };
 
 // Route to get user portfolio (UserID = 1)
@@ -77,27 +74,6 @@ app.get('/api/history/:symbol', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// Server starter
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
-
-
-
-//SQL Server connection with Windows Authentication 
-
-const sql = require('mssql/msnodesqlv8');
-const { NVarChar } = require('msnodesqlv8');
-const config = {
-    server: 'localhost',
-    database: 'KAMI_DB',
-    driver: 'msnodesqlv8',
-    options: {
-        trustedConnection: true,
-        trustServerCertificate: true
-    }
-};
 
 app.post('/login', async (req, res) => {
 
