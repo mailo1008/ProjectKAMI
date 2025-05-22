@@ -1,44 +1,26 @@
-const apiKey = "A9CGW2QA56GA0KOU";
-const portfolio = [
-  { symbol: "AAPL", shares: 1 },
-  { symbol: "MSFT", shares: 1 },
-  { symbol: "GOOGL", shares: 1 },
-  { symbol: "AMZN", shares: 1 },
-  { symbol: "NVDA", shares: 1 }
-];
-
 const portfolioContainer = document.getElementById("portfolio");
 const totalValueEl = document.getElementById("totalValue");
 const selectedStockLabel = document.getElementById("selectedStock");
-
-let totalValue = 0;
 let chart;
 
-async function fetchPrice(symbol) {
-  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
-  const response = await fetch(url);
-  const data = await response.json();
-
-  if (!data["Global Quote"] || !data["Global Quote"]["05. price"]) {
-    throw new Error(`Price data for ${symbol} not available.`);
-  }
-
-  return parseFloat(data["Global Quote"]["05. price"]);
-}
-
+// 🔹 Fetch holdings and display them
 async function displayPortfolio() {
-  portfolioContainer.innerHTML = "";
-  totalValue = 0;
-
   try {
-    for (const stock of portfolio) {
-      const price = await fetchPrice(stock.symbol);
-      const value = price * stock.shares;
+    const res = await fetch("http://localhost:3000/api/portfolio");
+    const data = await res.json();
+
+    portfolioContainer.innerHTML = "";
+    let totalValue = 0;
+
+    for (const item of data) {
+      // You can use static prices or extend backend to send current price
+      const dummyPrice = 100 + Math.random() * 100; // Replace with real price logic if needed
+      const value = item.shares * dummyPrice;
       totalValue += value;
 
-      const item = document.createElement("p");
-      item.innerHTML = `<strong><a href="#" class="stock-link" data-symbol="${stock.symbol}">${stock.symbol}</a></strong>: ${stock.shares} shares × $${price.toFixed(2)} = $${value.toFixed(2)}`;
-      portfolioContainer.appendChild(item);
+      const p = document.createElement("p");
+      p.innerHTML = `<strong><a href="#" class="stock-link" data-symbol="${item.symbol}">${item.symbol}</a></strong>: ${item.shares} shares × $${dummyPrice.toFixed(2)} = $${value.toFixed(2)}`;
+      portfolioContainer.appendChild(p);
     }
 
     totalValueEl.textContent = `$${totalValue.toFixed(2)}`;
@@ -47,66 +29,62 @@ async function displayPortfolio() {
       link.addEventListener("click", event => {
         event.preventDefault();
         const symbol = event.target.getAttribute("data-symbol");
-        updateChart(symbol).catch(err => {
-          document.getElementById("historyChart").outerHTML = `<p style="color: red;">⚠️ Error loading chart: ${err.message}</p>`;
-        });
+        updateChart(symbol);
       });
     });
+
   } catch (err) {
     portfolioContainer.innerHTML = `⚠️ Error loading portfolio: ${err.message}`;
   }
 }
 
+// 🔹 Draw the historical chart
 async function updateChart(symbol) {
   selectedStockLabel.textContent = symbol;
 
-  const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`;
-  const response = await fetch(url);
-  const data = await response.json();
+  try {
+    const res = await fetch(`http://localhost:3000/api/history/${symbol}`);
+    const data = await res.json();
 
-  if (!data["Time Series (Daily)"]) {
-    throw new Error(`Chart data for ${symbol} not available.`);
-  }
+    const dates = data.map(row => new Date(row.Date).toLocaleDateString());
+    const prices = data.map(row => row.Close);
 
-  const timeSeries = data["Time Series (Daily)"];
-  const dates = Object.keys(timeSeries).slice(0, 30).reverse();
-  const prices = dates.map(date => parseFloat(timeSeries[date]["4. close"]));
+    const chartData = {
+      labels: dates,
+      datasets: [{
+        label: `${symbol} Close Price`,
+        data: prices,
+        borderColor: "#4b5320",
+        backgroundColor: "rgba(107, 142, 35, 0.2)",
+        tension: 0.1
+      }]
+    };
 
-  const chartData = {
-    labels: dates,
-    datasets: [{
-      label: `${symbol} Price`,
-      data: prices,
-      borderColor: "#4b5320",
-      backgroundColor: "rgba(107, 142, 35, 0.2)",
-      tension: 0.1
-    }]
-  };
-
-  if (chart) {
-    chart.data = chartData;
-    chart.update();
-  } else {
     const ctx = document.getElementById("historyChart").getContext("2d");
-    chart = new Chart(ctx, {
-      type: "line",
-      data: chartData,
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: false
+
+    if (chart) {
+      chart.data = chartData;
+      chart.update();
+    } else {
+      chart = new Chart(ctx, {
+        type: "line",
+        data: chartData,
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: false
+            }
           }
         }
-      }
-    });
+      });
+    }
+
+  } catch (err) {
+    document.getElementById("historyChart").outerHTML = `<p style="color: red;">⚠️ Error loading chart: ${err.message}</p>`;
   }
 }
 
-displayPortfolio().catch(err => {
-  portfolioContainer.innerHTML = `⚠️ Error loading portfolio: ${err.message}`;
-});
-
-updateChart("AAPL").catch(err => {
-  document.getElementById("historyChart").outerHTML = `<p style="color: red;">⚠️ Error loading chart: ${err.message}</p>`;
-});
+// 🔹 Initial load
+displayPortfolio();
+updateChart("AAPL");  // Default chart
