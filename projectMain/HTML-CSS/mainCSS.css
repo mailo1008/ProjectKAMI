@@ -13,6 +13,7 @@ body {
     background-color: var(--main-very-light);
     margin: 0px;
     padding: 0px;
+    min-height: 100vh;
 }
 
 /*********************************
@@ -70,13 +71,25 @@ nav a:hover {
 /*********************************
 * Footer
 *********************************/
-#footer {
+footer {
     color: var(--main-very-light);
     background-color: var(--main-very-dark);
-    position: static;
+    clear: both;
+    position: relative;
     bottom: 0;
-    width: 100%;
-    margin: 0px;
+    min-height: 50px;
+    /*width: 100%;
+    margin: 0px;*/
+}
+
+#footernav {
+    /*vertical-align: middle;*/
+    text-align: center;
+}
+
+#footernav a {
+    text-decoration: none;
+    color: var(--main-light)
 }
 
 /********************************
@@ -101,6 +114,7 @@ button {
 button:hover {
     background-color: var(--main-dark);
 }
+
 
 
 /***********************
@@ -153,8 +167,15 @@ label {
     text-align: center;
 }
 
-#incorrectLogin {
+#LoginMessage {
     color: red;
+}
+
+.buysellform{
+    text-align: center;
+    height: auto;
+    box-shadow: none;
+    display:block;
 }
 
 /**************
@@ -224,6 +245,38 @@ Account Value Page
 .stockDummyGraph h2 {
     margin: 15px 
 }
+
+.dropdown {
+    float: right;
+    padding:16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-very-light);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right:0;
+  }
+  /*styling for content */
+  .dropdown-content a{
+    color: var(--main-very-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display:block;
+    font-family: Verdana;
+  }
+
+  .dropdown-content a:hover {
+    background-color: var(--main-light);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
 
 /*** styling for UsernameDisplay */
 
@@ -301,6 +354,7 @@ select {
     min-height: 55vh;
     justify-content: center;
     }
+
 
 /***************************
 Products Page
@@ -398,3 +452,94 @@ About Us Page
             clip-path:circle(50%);
             shape-outside: circle(20%); 
         }
+
+/********************8
+* BuySell Button Container
+**********************/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px;
+}
+
+.switch input {
+    width: auto;
+    height: auto;
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-light);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--main-very-light);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--main-dark);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.buySell {
+    position: absolute;
+    left: 70px;
+    top: 8px;
+    font-weight: bold;
+}
+
+.container form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.container select,
+.container input[type="number"] {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.container input[type="submit"] {
+    width: 200px;
+    margin: 20px auto;
+}
+
+/*******************
+* Display Transaction
+*******************/
+
+.transaction-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--main-light);
+    border-radius: 10px;
+    color: var(--main-very-dark);
+}
+
+.transaction-result p {
+    margin: 5px 0;
+}
+

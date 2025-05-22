@@ -1,76 +1,98 @@
-<html>
-<!--Head, these are not present in the main body of the page-->
-<!--Should link to CSS sheet as well as any external JS code-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!--LINK STYLE SHEET HERE-->
-    <link rel="stylesheet" href="mainCSS.css">
-    <!--LINK JAVASCRIPT HERE-->
-    <link rel="" href="">
-    <title>KAMI Finance</title>
+  <meta charset="UTF-8">
+  <title>KAMI Finance</title>
+  <link rel="stylesheet" href="mainCSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <header>
-        <!--Header for the page, this elements should use CSS to float so they are side by side-->
-        <div>
-            <div class="logo">
-                <img src="..\img\icon.png" alt="logo" href="index.html" width="50px" height="50px">
-            </div>
-            <div class="text">
-                <h1>KAMI Finance</h1>
-            </div>
-            <div class="login">
-                <a href="index.html">
-                    <button type="button" onclick="alert('Have a wonderful day!')">Log Out</button>
-                </a>
-            </div>
-        </div>
-        <!--Nav bar, will look more pretty with CSS-->
-        <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="../img/icon.png" alt="logo" width="50px" height="50px">
+    </div>
+    <div class="text">
+      <h1>KAMI Finance</h1>
+    </div>
+    <div class="dropdown">
+      <img src="../img/profileIcon.png" alt="profile icon" width="60" height="60">
+      <div class="dropdown-content">
+        <a href="buyButton.html">BUY/SELL Stocks</a>
+        <a href="Portfolio.html">Portfolio </a>
+        <a href="#">Cash Balance</a>
+        <a href="index.html" onclick="alert('Have a wonderful day!')">Log Out</a>
+      </div>
+    </div>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+  </header>
 
-    <h1 id="usernameDisplay"></h1>
-    <script src="usernameDisplay.js"></script>
+  <h1 id="usernameDisplay"></h1>
+  <script src="../JS/usernameDisplay.js" defer></script>
 
-    <div class="accountValue-wrapper">
-        <div id="boxstyle">
-            <div class="section-container">
-                <h2>Stock Value </h2>
-                <p>$100,000(4,000 shares)</p>
-                <p>I want to..</p>
-            </div>
+  <a href="">
+    <button id="buy_sellPageBTN">Buy/Sell Stocks</button>
+  </a>  
+  <a href="">
+    <button id="portfolioBTN">Portfolio</button>
+  </a>
+  <a href="">
+    <button id="cashBalanceBTN">Cash Balance</button>
+  </a>
 
-            <div class="section-container">
-                <h2>Cash Summary</h2>
-                <p>$25,000</p>
-            </div>
-        </div>
-        <div class="stockDummyGraph">
-            <h2>All Stocks Performance</h2>
-        <img class="stockDummyGraph" src="../img/stockDummyGraph.png">
-        </div>
+  <div class="accountValue-wrapper">
+    <div id="boxstyle">
+      <div class="section-container">
+        <h2>Account Value</h2>
+        <p id="totalValue">Loading...</p>
+      </div>
+
+      <div class="section-container">
+        <h2>Portfolio</h2>
+        <div id="portfolio">Loading portfolio...</div>
+      </div>
     </div>
 
+    <div class="stockDummyGraph">
+      <h2>Stock History: <span id="selectedStock">AAPL</span></h2>
+      <canvas id="historyChart" width="600" height="300"></canvas>
+    </div>
+  </div>
 
-    <!--Main body text and images go here-->
-    <p>Available(stocks available to sell)</p>
-    <p>Unavailable(Cash awaiting to invest)</p>
-
-    <footer id="footer">
-        <h3>Products</h3>
-        <h3>Contact Us</h3>
-        <h3>About Us</h3>
-        <p>Kami Finance is not a real product and this product was developed as a project for a coding bootcamp. Any
-            likenesses to any person, business, or otherwise
-            is purely coincidental.
+  <footer id="footer">
+        <head>
+            <!--LINK STYLE SHEET HERE-->
+            <link rel="stylesheet" href="indexCSS.css">
+            <!--LINK JAVASCRIPT HERE-->
+            <link rel="" href="">
+        </head>
+        <div id="social">
+            <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
+                        alt="fb icon" width="30px" height="30px"></a></social>
+            <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
+                        alt="insta icon" width="30px" height="30px"></a></social>
+            <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
+                        alt="twitter icon" width="30px" height="30px"></a></social>
+        </div>
+        <br/>
+        <br/>
+        <div id="footerNav">
+            <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+        </div>
+        <br/>
+        <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
+            likenesses to any person, business, or products/services is purely coincidental.
         </p>
     </footer>
+
+  <script src="stockGraph.js">
+  </script>
 </body>
 
 </html>
