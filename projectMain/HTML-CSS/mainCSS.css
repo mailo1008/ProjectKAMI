@@ -115,13 +115,6 @@ button:hover {
     background-color: var(--main-dark);
 }
 
-#radiobutton {
-    transform: none;
-    box-shadow: none;
-    height: 20px;
-    width: 20px;
-    accent-color:var(--main-medium)
-}
 
 
 /***********************
@@ -174,8 +167,15 @@ label {
     text-align: center;
 }
 
-#incorrectLogin {
+#LoginMessage {
     color: red;
+}
+
+.buysellform{
+    text-align: center;
+    height: auto;
+    box-shadow: none;
+    display:block;
 }
 
 /**************
@@ -355,7 +355,191 @@ select {
     justify-content: center;
     }
 
-  
-  
 
+/***************************
+Products Page
+***************************/
+
+/*To position footer and body without overlapping footer*/
+
+/*gallery*/
+
+img.products {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bulkbody-products {
+        min-height: 100vh;
+        display: column;
+        flex-direction: column;
+        margin: 50px;
+    }
+/*used to wrap text with imgs*/
+    .container-products {
+        position: relative;
+    }
+
+.content-wrapper-products::after {
+            display: flex;
+            align-items:center;
+            justify-content: center
+       }
+
+/***************************
+About Us Page
+***************************/
+/* Text content to fit around images*/
+
+.outerbulk {
+    margin: 10px;
+    padding: 50px;
+}
+.bulkbody_about{
+        min-height: 100vh;
+        display: inline;
+        flex-direction: column;
+        margin: 100px;
+    }
+
+     h2 {
+        text-align: center;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-block: 10px;
+        max-width: 500px;
+    }
+    
+    .content-wrapper-about::after {
+            content:"";
+            clear:both;
+            display:flex;
+       }
+
+ /*Circular images used within body*/
+        about1 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+
+        about2 {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            margin-right: 10px;
+            margin-left: 100px;
+            float:left;
+            clip-path:circle(50%);
+            shape-outside: circle(20%);
+        } 
+
+        about3 {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            margin-right: 100px;
+            margin-left: 10px;
+            float:right;
+            clip-path:circle(50%);
+            shape-outside: circle(20%); 
+        }
+
+/********************8
+* BuySell Button Container
+**********************/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px;
+}
+
+.switch input {
+    width: auto;
+    height: auto;
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-light);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--main-very-light);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--main-dark);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.buySell {
+    position: absolute;
+    left: 70px;
+    top: 8px;
+    font-weight: bold;
+}
+
+.container form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.container select,
+.container input[type="number"] {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.container input[type="submit"] {
+    width: 200px;
+    margin: 20px auto;
+}
+
+/*******************
+* Display Transaction
+*******************/
+
+.transaction-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--main-light);
+    border-radius: 10px;
+    color: var(--main-very-dark);
+}
+
+.transaction-result p {
+    margin: 5px 0;
+}
 

@@ -37,33 +37,35 @@
 
     <div class="container">
 
-        <form id="Create_account" onsubmit="return" validateForm(); method="post">
+        <form id="createAccount" action="/createAccount" method="post">
             <h2> Create your account</h2>
 
             <p>Please fill in the information below to create your account.</p>
 
             <label for="first-name">First name</label>
-            <input type="text" placeholder="Enter First name" name="first-name" required>
+            <input type="text" placeholder="Enter First name" id="firstName" required>
 
             <label for="last-name">Last name</label>
-            <input type="text" placeholder="Enter Last name" name="last-name" required>
+            <input type="text" placeholder="Enter Last name" id="lastName" required>
 
             <label for="dob">Date of Birth</label>
-            <input type="date" placeholder="MM/DD/YYYY" name="dob" required>
+            <input type="date" placeholder="MM/DD/YYYY" id="dob" required>
 
             <label for="email">Email</label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" id="email" required>
 
             <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" id="psw" required>
 
             <label for="psw-repeat">Repeat Password</label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <input type="password" placeholder="Repeat Password" id="psw-repeat" required>
 
-            <button onclick="validate()">Create account</button>
+            <button type="submit">Create account</button>
 
+            <div id="LoginMessage"></div>
 
         </form>
+        <script src="../JS/createAccount.js" defer></script>
 
         <div>
             <p>Already have an account set up?</p>
