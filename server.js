@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 //SQL Server connection with Windows Authentication 
 
 const sql = require('mssql/msnodesqlv8');
+const { NVarChar } = require('msnodesqlv8');
 const config = {
     server: 'localhost',
     database: 'KAMI_DB',
@@ -54,6 +55,54 @@ app.post('/login', async (req, res) => {
         res.status(500).send(err.message);
     }
 });
+
+app.post('/createAccount', async (req,res)=>{
+    const { firstName, lastName, email, dob, password } = req.body;
+    let pool;
+
+    try{
+        pool= await sql.connect(config);
+        const hashedPassword= await bcrypt.hash(password,10);
+        
+    const result= await pool.request()
+    .input('dob', sql.Date, new Date(dob))
+    .input('email', sql.NVarChar,email)
+    .input('firstName', sql.NVarChar, firstName)
+    .input('lastName', sql.NVarChar, lastName)
+    .input('password', sql.NVarChar,hashedPassword)
+    .query(`
+    IF NOT EXISTS( Select Email From Users WHERE Email= @email)
+    BEGIN
+    INSERT INTO Users( DateOfBirth, Email, FirstName, LastName, Password)
+    VALUES (@dob, @email, @firstName, @lastName, @password);
+    END
+    ELSE 
+    BEGIN
+    THROW 50000,'Email already exists',1;
+    END
+    `);
+
+    res.status(201).json({
+        success:true,
+        message:'Account created successfully'
+    });
+
+    } catch (err) {
+        console.error('Error details:', err);
+        res.status(500).json({
+            success:false,
+            message: err.message ||'An error occured during account creation'
+        });
+    } finally{
+        if (pool){
+            try{
+                await sql.close(); // Close connection 
+            }catch(err){
+                console.error('Error closing connection',err);
+            }
+        }
+    }
+    });
 
 app.listen(3000, () => {
     console.log('Server running at http://localhost:3000');
