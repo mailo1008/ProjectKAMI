@@ -21,28 +21,47 @@ body {
     /* Container needed to position the overlay. Adjust the width as needed */
   video {
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100vh;
     border-radius: 5em;
     padding: 10px;
     margin: auto;
+    
 }
+.container_bubble {
+    display: flex;
+    justify-content: center;    /* horizontal center */
+    align-items: center;        /* vertical center */
+    min-height: 100vh;         /* full viewport height */
+
+    bubble {
+        background-color: var(--main-medium);
+        border: none;
+        color: var(--main-very-light);
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        margin: 4px 2px;
+        border-radius: 16px;
+        font-size: 20px;
+}}
     
 
     /*Aligning header and text to images within body*/
-    h2 {
+    /*h2 {
         text-align: center;
         justify-content: center;
         padding-top: 40px;
-    }  
+    }  */
     
 
-    p {text-align: center;
+    /*p {text-align: center;
         margin-left: auto;
         margin-right: auto;
         padding-block: 30px;
         max-width: 500px;
-    }
+    }*/
     
         .content-wrapper::after {
             content:"";
@@ -56,8 +75,10 @@ body {
             z-index: 2;
         }
 
+        
+
        /*Circular images used within body */
-        round1 {
+        /* round1 {
             margin-top: 50px;
             margin-bottom: 50px;
             margin-right: 100px;
@@ -65,16 +86,16 @@ body {
             float:right;
             clip-path:circle(50%);
             shape-outside: circle(20%); 
-        }
+        } 
 
-        round2 {
+        /* round2 {
             margin-top: 10px;
             margin-bottom: 50px;
             margin-right: 10px;
             margin-left: 100px;
             float:left;
             clip-path:circle(50%);
-            shape-outside: circle(20%);
+            shape-outside: circle(20%); 
         } 
 
         round3 {
@@ -85,21 +106,26 @@ body {
             float:right;
             clip-path:circle(50%);
             shape-outside: circle(20%); 
-        }
+        }*/
 
 /*placement of bamboo img to allow overlapping of other texts and imgs*/
     img[src*="bamboo5"] {
     position: absolute;
     z-index: 2;
-    bottom: -38;
-    width: 43.4%;
+    bottom: -36;
+    width: 39%;
     opacity: .40;
     margin: 10px;
+    background-repeat: repeat-y;
+    }
+
+    img[src*="bamboo"]{
+        background-repeat: repeat-y;
     }
 
 .content-wrapper {
     position: relative;
-    z-index: 3;
+    z-index: 5;
 } 
 
 
