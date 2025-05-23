@@ -5,7 +5,7 @@
 
 <head>
     <!--LINK STYLE SHEET HERE-->
-    <link rel="stylesheet" href="mainCSS.css">
+    <link rel="stylesheet" href="loginRegisterCSS.css">
     <!--LINK JAVASCRIPT HERE-->
     <link rel="" href="">
     <title>KAMI Finance</title>
@@ -33,57 +33,63 @@
 
     <body>
 
-        <div class="container">
+        <section>
+            <div class="login-box">
 
-            <form id="loginForm" action="/login" method="POST">
+                <form id="loginForm" action="/login" method="POST">
 
-                <h2> Log in to your account</h2>
+                    <h2> Log in</h2>
+                    <div class="input-bx">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="text" id="username" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-bx">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
 
-                <label for="username">Username</label>
-                <input type="text" placeholder="Email" id="username">
+                    <div id="LoginMessage"></div>
+                    <div class="forgotPW">
+                        <p><a href="forgotPassword.html">Forgot Password?</a>
+                        </p>
+                    </div>
 
-                <label for="password">Password</label>
-                <input type="password" placeholder="Password" id="password">
+                    <button type="submit">Login</button>
 
-                <button type="submit">Log in</button>
-
-                <div id="LoginMessage"></div>
-
-                <p><a href="forgotPassword.html">Forgot Password?</a>
-                </p>
-                <p> New user? Register
-                    <a href="createAccountPage.html"> here</a>
-                </p>
-
-            </form>
-            <script src="../JS/loginForm.js" defer></script>
-        </div>
+                    <div class="register-link">
+                        <p> New user? Register
+                            <a href="createAccountPage.html"> here</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="../JS/loginForm.js" defer></script>
 
         <footer id="footer">
-        <head>
-            <!--LINK STYLE SHEET HERE-->
-            <link rel="stylesheet" href="indexCSS.css">
-            <!--LINK JAVASCRIPT HERE-->
-            <link rel="" href="">
-        </head>
-        <div id="social">
-            <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
-                        alt="fb icon" width="30px" height="30px"></a></social>
-            <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
-                        alt="insta icon" width="30px" height="30px"></a></social>
-            <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
-                        alt="twitter icon" width="30px" height="30px"></a></social>
-        </div>
-        <br/>
-        <br/>
-        <div id="footerNav">
-            <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
-        </div>
-        <br/>
-        <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
-            likenesses to any person, business, or products/services is purely coincidental.
-        </p>
-    </footer>
+            <div id="social">
+                <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
+                            alt="fb icon" width="30px" height="30px"></a></social>
+                <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
+                            alt="insta icon" width="30px" height="30px"></a></social>
+                <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
+                            alt="twitter icon" width="30px" height="30px"></a></social>
+            </div>
+            <br />
+            <br />
+            <div id="footerNav">
+                <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a
+                        href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+            </div>
+            <br />
+            <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
+                likenesses to any person, business, or products/services is purely coincidental.
+            </p>
+        </footer>
 
     </body>
 

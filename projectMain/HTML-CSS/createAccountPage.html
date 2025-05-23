@@ -5,7 +5,7 @@
 
 <head>
     <!--LINK STYLE SHEET HERE-->
-    <link rel="stylesheet" href="mainCSS.css">
+    <link rel="stylesheet" href="loginRegisterCSS.css">
     <!--LINK JAVASCRIPT HERE-->
     <link rel="" href="">
     <title>KAMI Finance</title>
@@ -21,67 +21,65 @@
             <div class="text">
                 <h1>KAMI Finance</h1>
             </div>
-            <div class="login">
-                <a href="login.html">
-                    <button>Log in</button>
-                </a>
-            </div>
         </div>
         <!--Nav bar, will look more pretty with CSS-->
         <nav id="nav">
-            <a href="products.html">Products</a> 
-            <a href="contact.html">Contact</a> 
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
             <a href="about.html">About Us</a>
         </nav>
     </header>
 
-    <div class="container">
+    <section>
+        <div class="register-box">
 
-        <form id="createAccount" action="/createAccount" method="post">
-            <h2> Create your account</h2>
+            <form id="createAccount" action="/createAccount" method="post">
+                <h2> Create your account</h2>
 
-            <p>Please fill in the information below to create your account.</p>
+                <p>Please fill in the information below to create your account.</p>
 
-            <label for="first-name">First name</label>
-            <input type="text" placeholder="Enter First name" id="firstName" required>
+                <div class="input-bx-reg">
+                    <input type="text" id="firstName" required>
+                    <label for="first-name">First name</label>
+                </div>
 
-            <label for="last-name">Last name</label>
-            <input type="text" placeholder="Enter Last name" id="lastName" required>
+                <div class="input-bx-reg">
+                    <input type="text" id="lastName" required>
+                    <label for="last-name">Last name</label>
+                </div>
 
-            <label for="dob">Date of Birth</label>
-            <input type="date" placeholder="MM/DD/YYYY" id="dob" required>
+                <div class="input-bx-dob">
+                    <input type="date" id="dob" required>
+                    <label for="dob">Date of Birth</label>
+                </div>
 
-            <label for="email">Email</label>
-            <input type="text" placeholder="Enter Email" id="email" required>
+                <div class="input-bx-reg">
+                    <input type="text" id="email" required>
+                    <label for="email">Email</label>
+                </div>
 
-            <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" id="psw" required>
+                <div class="input-bx-reg">
+                    <input type="password" id="psw" required>
+                    <label for="psw">Password</label>
+                </div>
 
-            <label for="psw-repeat">Repeat Password</label>
-            <input type="password" placeholder="Repeat Password" id="psw-repeat" required>
+                <button class="create" type="submit">Create account</button>
 
-            <button type="submit">Create account</button>
+                <div id="LoginMessage"></div>
 
-            <div id="LoginMessage"></div>
+                <div class="register-link">
+                    <p>Already have an account set up?
+                        <a href="login.html">Log in</a>
+                    </p>
+                </div>
 
-        </form>
-        <script src="../JS/createAccount.js" defer></script>
-
-        <div>
-            <p>Already have an account set up?</p>
-            <a href="login.html">
-                <button>Log in</button>
-            </a>
+            </form>
+            <script src="../JS/createAccount.js" defer></script>
 
         </div>
-    </div>
+    </section>
     <footer id="footer">
-        <head>
-            <!--LINK STYLE SHEET HERE-->
-            <link rel="stylesheet" href="indexCSS.css">
-            <!--LINK JAVASCRIPT HERE-->
-            <link rel="" href="">
-        </head>
         <div id="social">
             <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
                         alt="fb icon" width="30px" height="30px"></a></social>
@@ -100,7 +98,6 @@
             likenesses to any person, business, or products/services is purely coincidental.
         </p>
     </footer>
-
 </body>
 
 </html>
