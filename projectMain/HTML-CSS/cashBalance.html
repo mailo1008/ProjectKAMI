@@ -20,40 +20,24 @@
             <div class="text">
                 <h1>KAMI Finance</h1>
             </div>
-            <div class="login">
-                <a href="login.html">
-                    <button>Log in</button>
-                </a>
+            <div class="dropdown">
+                <img src="../img/profileIcon.png" alt="profile icon" width="60" height="60">
+                <div class="dropdown-content">
+                    <a href="stockTrading.html">BUY/SELL Stocks</a>
+                    <a href="Portfolio.html">Portfolio</a>
+                    <a href="cashBalance.html">Cash Balance</a>
+                    <a href="index.html" onclick="alert('Have a wonderful day!')">Log Out</a>
+                </div>
             </div>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About Us</a>
+            </nav>
         </div>
-        <!--Nav bar, will look more pretty with CSS-->
-        <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-        </nav>
     </header>
     <!--Main body text and images go here-->
-    <div class="contactUsContainer">
-    <!--Form used to submit feedback, will just cycle back to a page saying it was submitted-->
-        <form action="thankYouFeedback.html">
-            <h2>How can we help?</h2>
-            <p>Have questions? Need to speak with a consultant? Want to provide feedback? Get in touch with us!</p>
-            <select>
-                <option>Requesting Consultation</option>
-                <option>General Question</option>
-                <option>Issue with site</option>
-            </select><br>
-            <label>Your name</label>
-            <input type="" text"><br>
-            <label>Email address</label>
-            <input type="" text"><br>
-            <label>Additional information</label>
-            <textarea rows="10" cols="30"></textarea><br>
-            <input type="submit">
-        </form>
-    </div>
     <!--Footer for bottom of page-->
     <!--Includes written out nav bar, contact info, social media buttons, etc.-->
     <footer id="footer">
@@ -65,12 +49,13 @@
             <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
                         alt="twitter icon" width="30px" height="30px"></a></social>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div id="footerNav">
-            <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+            <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a>
+                | <a href="about.html">About Us</a></h3>
         </div>
-        <br/>
+        <br />
         <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
             likenesses to any person, business, or products/services is purely coincidental.
         </p>
