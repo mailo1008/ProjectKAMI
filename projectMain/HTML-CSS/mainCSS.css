@@ -14,6 +14,9 @@ body {
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    color:var(--main-very-dark);
 }
 
 /*********************************
@@ -541,4 +544,43 @@ input:checked + .slider:before {
 
 .transaction-result p {
     margin: 5px 0;
+}
+
+
+/*******************
+* Products Page Detailing
+*******************/
+.topProducts {
+    color: var(--main-very-light);
+    background: var(--main-dark);
+    background: linear-gradient(90deg,rgba(58, 83, 40, 1) 50%, rgba(28, 44, 17, 1) 100%);
+    padding:100px;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+div .alignitems{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+/******************
+* About Us
+******************/
+.text-centerAbout {
+    position:absolute;
+    left: 75%;
+    top: 50%;
+    margin-left:-74px;
+    margin-top:-27px;
+    display:inline-block;}
+
+.full-widthAbout {
+    color: var(--main-very-light);
+    background: var(--main-dark);
+    background: linear-gradient(90deg,rgba(58, 83, 40, 1) 50%, rgba(28, 44, 17, 1) 100%);
+    width:100%;
+    overflow:hidden;
+    position:relative;
 }
