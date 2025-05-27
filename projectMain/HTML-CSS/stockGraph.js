@@ -3,7 +3,7 @@ const totalValueEl = document.getElementById("totalValue");
 const selectedStockLabel = document.getElementById("selectedStock");
 let chart;
 
-// 🔹 Fetch holdings and display them
+// Fetch holdings and display them
 async function displayPortfolio() {
   try {
     const res = await fetch("http://localhost:3000/api/portfolio");
@@ -34,7 +34,7 @@ async function displayPortfolio() {
     });
 
   } catch (err) {
-    portfolioContainer.innerHTML = `⚠️ Error loading portfolio: ${err.message}`;
+    portfolioContainer.innerHTML = `Error loading portfolio: ${err.message}`;
   }
 }
 
@@ -81,10 +81,10 @@ async function updateChart(symbol) {
     }
 
   } catch (err) {
-    document.getElementById("historyChart").outerHTML = `<p style="color: red;">⚠️ Error loading chart: ${err.message}</p>`;
+    document.getElementById("historyChart").outerHTML = `<p style="color: red;"> Error loading chart: ${err.message}</p>`;
   }
 }
 
-// 🔹 Initial load
+// Initial load
 displayPortfolio();
 updateChart("AAPL");  // Default chart
