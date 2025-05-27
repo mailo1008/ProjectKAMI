@@ -162,6 +162,12 @@ h2 {
     line-height: 57px;
 }
 
+#LoginMessage {
+    color: red;
+    margin: 12px 0 10px;
+    text-align: center;
+}
+
 .forgotPW {
     font-size: 1em;
     color: var(--main-very-dark);
