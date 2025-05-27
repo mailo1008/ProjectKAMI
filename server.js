@@ -89,7 +89,12 @@ app.post('/login', async (req, res) => {
 
         const user = result.recordset[0];
         if (user && await bcrypt.compare(password, user.Password)) {
-            res.json({ success: true, message: "Login successful" });
+            res.json({ 
+                success: true, 
+                message: "Login successful",
+                userId: user.UserID,
+             });
+             console.log('userId:',userId)
         } else {
             res.status(401).json({ success: false, message: "Invalid credentials" });
         }
@@ -145,6 +150,43 @@ app.post('/createAccount', async (req,res)=>{
         }
     }
     });
+
+app.get('/transactions', async (req, res) => {
+    const userId = req.query.userId; // Get userId from query parameter
+    console.log('req:', userId)
+    
+    if (!userId) {
+        return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+        
+        request.input('userId', sql.Int, userId);
+        
+        const result = await request.query(`
+            SELECT
+                t.StockID,
+                s.TickerSymbol,
+                t.Type,
+                t.Quantity,
+                t.Price,
+                t.Date,
+                (t.Quantity * t.Price) as TotalValue
+            FROM Transactions t
+            JOIN Stocks s ON t.StockID = s.StockID
+            WHERE t.UserID = @userId
+            ORDER BY t.Date DESC
+        `);
+        
+        res.json(result.recordset);
+        
+    } catch (err) {
+        console.error('Error fetching transactions:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
 
 app.listen(3000, () => {
     console.log('Server running at http://localhost:3000');

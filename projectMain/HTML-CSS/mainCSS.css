@@ -584,3 +584,15 @@ div .alignitems{
     overflow:hidden;
     position:relative;
 }
+/*Transaction Page*/
+.transaction-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}

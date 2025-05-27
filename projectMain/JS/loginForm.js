@@ -36,6 +36,10 @@ loginForm.addEventListener("submit", async (e) => {
             localStorage.setItem('loggedIn', 'true');
             isLoggedIn = true;
 
+            //store userID to be used in transactions function later. 
+            localStorage.setItem('userId', data.userId);
+            console.log('userid stored:',data.userId);
+
             //extract username for the URL
             const displayUsername = username.split('@')[0];
 
