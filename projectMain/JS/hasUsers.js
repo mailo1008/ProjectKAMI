@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const config = { 
   server: 'localhost', 
-  database: 'KAMI_DB', 
+  database: 'ProjectKAMIDB', 
   driver: 'msnodesqlv8', 
   options: { 
     trustedConnection: true, 
