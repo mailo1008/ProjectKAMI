@@ -1,0 +1,334 @@
+/**LogIn**/
+body {
+    --main-very-light: #ECF3E7;
+    --main-light: #9EC383;
+    --main-medium: #6A9849;
+    --main-dark: #3A5328;
+    --main-very-dark: #1C2C11;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/background.png') no-repeat ;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.register-box {
+    position: relative;
+    width: 500px;
+    height: auto;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(106, 152, 73, 1);
+    padding:10px;
+}
+
+.login-box {
+    position: relative;
+    width: 500px;
+    height: 550px;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(106, 152, 73, 1);
+}
+
+h2 {
+    font-size: 3em;
+    color: var(--main-very-dark);
+    text-align: center;
+
+}
+
+.input-bx-reg{
+    position: relative;
+    width: 380px;
+    margin:8px;
+    border-bottom: 2px solid var(--main-very-dark);
+}
+
+.input-bx {
+    position: relative;
+    width: 380px;
+    margin:30px 0;
+    border-bottom: 2px solid var(--main-very-dark);
+}
+
+.input-bx-dob{
+    position: relative;
+    width: 380px;
+    margin:8px;
+    border-bottom: 2px solid var(--main-very-dark);
+}
+
+.input-bx-dob label{ 
+    position: absolute;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--main-very-dark);
+    pointer-events: none;
+    transition: .5s; 
+}
+
+.input-bx-reg label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--main-very-dark);
+    pointer-events: none;
+    transition: .5s; 
+}
+
+.input-bx label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--main-very-dark);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-bx-reg input:focus~label,
+.input-bx-reg input:valid~label {
+    top: -5px;
+}
+
+.input-bx input:focus~label,
+.input-bx input:valid~label {
+    top: -5px;
+}
+.input-bx-dob input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--main-very-dark);
+    padding: 0 35px 0 5px;
+}
+.input-bx-reg input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--main-very-dark);
+    padding: 0 35px 0 5px;
+}
+
+.input-bx input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--main-very-dark);
+    padding: 0 35px 0 5px;
+}
+
+.input-bx .icon {
+    position: absolute;
+    right: 8px;
+    color: var(--main-very-dark);
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+#LoginMessage {
+    color: red;
+    margin: 12px 0 10px;
+    text-align: center;
+}
+
+.forgotPW {
+    font-size: 1em;
+    color: var(--main-very-dark);
+    margin: -15px 0 15px;
+    display: flex;
+    font-family: Trebuchet MS;
+}
+
+.forgotPW a{
+    color:var(--main-very-dark);
+    text-decoration: none;
+}
+
+.forgotPW a:hover{
+    text-decoration: underline;
+}
+
+.register-link {
+    font-size: 1em;
+    font-family: Trebuchet MS;
+    color: var(--main-very-dark);
+    text-align: center;
+    margin:25px 0 10px;
+}
+
+.register-link p a {
+    color: var(--main-very-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+} 
+
+.register-box form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-box p {
+    color: var(--main-very-dark);
+    text-align: center;
+    margin: 10px 0;
+}
+
+/********************************
+Buttons
+********************************/
+.create button{
+ width: 100%;
+    height: 40px;
+    background: var(--main-dark);
+    border: none;
+    color: var(--main-very-light);
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background: var(--main-dark);
+    border: none;
+    color: var(--main-very-light);
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: var(--main-medium);
+}
+
+@media (max-width: 360px) {
+    .login-box {
+        width: 100%;
+        height: 100vh;
+    }
+}
+/*********************************
+* Navigation Menu
+**********************************/
+
+nav {
+    background-color: var(--main-medium);
+    width: 100%;
+    overflow: auto;
+
+}
+
+nav a {
+    color: var(--main-very-light);
+    text-decoration: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+nav a:hover {
+    background-color: var(--main-dark);
+    color: var(--main-very-light);
+}
+
+/*********************************
+* Heading
+********************************/
+
+header div {
+    display: inline;
+    padding-top: 15px;
+}
+
+div .text {
+    float: left;
+    padding-left: 10px;
+}
+
+div .logo {
+    padding-left: 15px;
+    float: left;
+}
+
+header {
+    background-color: var(--main-very-light);
+}
+
+/*********************************
+* Footer
+*********************************/
+footer {
+    color: var(--main-very-light);
+    background-color: var(--main-very-dark);
+    clear: both;
+    position: relative;
+    bottom: 0;
+    min-height: 50px;
+    /*width: 100%;
+    margin: 0px;*/
+}
+
+#footernav {
+    /*vertical-align: middle;*/ 
+    text-align: center;
+}
+
+#footernav a {
+    text-decoration: none;
+    color: var(--main-light)
+}
+
+
+

@@ -36,23 +36,30 @@ function assignStockPrice(){
 /******************************************************
 * NEEDS TO BE SET UP TO CAPTURE INFO FROM THE DOCUMENT
 *******************************************************/
-function buyStock(stockName, amt){
-    if (findStock(stockName) != null){                          //Checks if the stock they want exists (it should) - this step may be unnecessary but I needed it for testing
-        if (findPortfolio(stockName) != null){                  //If it does exist, check if they have it in their portfolio
-            const stock = findPortfolio(stockName);             //store the queried stock in a variable
-            stock.amt += amt;
-            acctBalance = acctBalance - (stock.price * amt);
-        } else {                                                //if they do not have the requested stock, this will add it to their portfolio
-            const stock = findStock(stockName);
+function buyStock(stockName, amt) {
+    if (findStock(stockName) != null) {
+        const stock = findStock(stockName);
+        const totalCost = stock.price * amt;     
+        // Check if purchase would result in negative balance
+        if (totalCost > acctBalance) {
+            alert("Insufficient funds for this transaction!");
+            return false;
+        }
+        if (findPortfolio(stockName) != null) {
+            const portfolioStock = findPortfolio(stockName);
+            portfolioStock.amt += amt;
+            acctBalance = acctBalance - totalCost;
+        } else {
             stock.amt += amt;
             portfolio.set(stockID, stock);
             stockID++;
-            acctBalance = acctBalance - (stock.price * amt);
+            acctBalance = acctBalance - totalCost;
         }
+        return true;
     } else {
-        console.log(`Stock "${stockName}" not found.`);         //This may not happen for our use case, but keeping for testing
+        console.log(`Stock "${stockName}" not found.`);
+        return false;
     }
-    
 }
 
 //this is a query to see if there requested stock EXISTS
@@ -82,26 +89,112 @@ function findPortfolio(name){
 /******************************************************
 * NEEDS TO BE SET UP TO CAPTURE INFO FROM THE DOCUMENT
 *******************************************************/
-function sellStock(stockName, amt){
-    if (findStock(stockName) != null){
-        if (findPortfolio(stockName) != null){
+function sellStock(stockName, amt) {
+    if (findStock(stockName) != null) {
+        if (findPortfolio(stockName) != null) {
             const stock = findPortfolio(stockName);
-            if (amt < stock.amt) {
+            if (amt <= stock.amt) {
                 acctBalance = acctBalance + (stock.price * amt);
                 stock.amt -= amt;
+                return true;  // Return true when sale is successful
             } else {
-                console.log(`You cannot sell more stock than you have!`);
+                alert("You cannot sell more stock than you have!");
+                return false;
             }
         } else {
-            const stock = findStock(stockName);
-            const stockToAdd = {stockName: stock.stockName, price: stock.price, amt: stock.amt};
-            stockToAdd.amt -= amt;
-            portfolio.set(stockID, stockToAdd);
-            stockID++;
-            acctBalance = acctBalance + (stock.price * amt);
+            alert("You don't own any shares of this stock!");
+            return false;
         }
     } else {
         console.log(`Stock "${stockName}" not found.`);
+        return false;
+    }
+}
+
+// Update toggle function
+function toggleSellMode() {
+    const toggle = document.getElementById("modeToggle");
+    const label = document.getElementById("buyingSelling");
+    if (toggle.checked) {
+        label.textContent = "Sell";
+    } else {
+        label.textContent = "Buy";
+    }
+}
+
+//Handles trade once form is submitted
+function handleTrade(event) {
+    event.preventDefault();
+    
+    const isSelling = document.getElementById("modeToggle").checked;
+    const stockName = document.getElementById("stock").value;
+    const amount = parseInt(document.getElementById("amount").value);
+    const stock = findStock(stockName);
+    const totalCost = stock.price * amount;
+    //Confirmation message:    
+    const confirmMessage = `Do you want to ${isSelling ? 'sell' : 'buy'} ${amount} shares of ${stockName} for ${totalCost.toLocaleString()}?`;
+    if (confirm(confirmMessage)) {
+        const resultDiv = document.getElementById("tradeResult");
+        let success;        
+        if (isSelling) {
+            success = sellStock(stockName, amount);
+        } else {
+            success = buyStock(stockName, amount);
+        }        
+        if (success) {
+            resultDiv.innerHTML = `
+                <div class="transaction-result">
+                    <h2>Transaction Complete!</h2><br/>
+                    ${isSelling ? 'Sold' : 'Bought'} ${amount} shares of ${stockName}<br/>
+                    <br/>
+                    Total Price: &dollar; ${totalCost.toLocaleString()}</p><br/>
+                    Current ${stockName} shares owned: ${findPortfolio(stockName) ? findPortfolio(stockName).amt : 0}<br/>
+                    New Account Balance: &dollar; ${acctBalance.toLocaleString()}
+                </div>`;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="transaction-result">
+                    <h2>Transaction Failed!</h2><br/>
+                    You were unable to exchange ${amount} shares of ${stockName} due to insufficient balance.<br/>
+                    <br/>
+                    Total Price: &dollar;${totalCost.toLocaleString()}.00<br/>
+                    Current ${stockName} shares owned: ${findPortfolio(stockName) ? findPortfolio(stockName).amt : 0}<br/>
+                    Account Balance: &dollar;${acctBalance.toLocaleString()}.00
+                </div>`;
+        }
+    }
+}
+
+function calculatePreview() {
+    const stockName = document.getElementById("stock").value;
+    const amount = parseInt(document.getElementById("amount").value) || 0;
+    const previewDiv = document.getElementById("costPreview");
+    const priceDiv = document.getElementById("currentPrice");
+    const ownedDiv = document.getElementById("currentOwned");
+    const imageDiv = document.getElementById("graphImage");
+    
+    if (stockName) {
+        const stock = findStock(stockName);
+        priceDiv.innerHTML = `
+            <h4>Current Price:</h4><br/>
+            Current Price per Share: &dollar;${stock.price.toLocaleString()}.00`;
+
+        ownedDiv.innerHTML = `
+            <h4>Current Shares in ${stock.stockName.toLocaleString()}:</h4><br/>
+            ${stock.amt.toLocaleString()}`;
+
+        imageDiv.src = `../img/${stock.stockName}.png`;
+        
+        if (amount > 0) {
+            const totalCost = stock.price * amount;
+            previewDiv.innerHTML = `Estimated Total Cost: &dollar;${totalCost.toLocaleString()}.00`;
+        } else {
+            previewDiv.innerHTML = "";
+        }
+    } else {
+        priceDiv.innerHTML = "";
+        previewDiv.innerHTML = "";
+        imageDiv.src=``;
     }
 }
 
