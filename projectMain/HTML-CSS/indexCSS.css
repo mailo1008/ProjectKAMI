@@ -10,117 +10,133 @@ body {
 }
 
 /*To position footer and body without overlapping footer*/
+.bulkbody {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
 
-.bulkbody{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-    }
-
-    /* Container needed to position the overlay. Adjust the width as needed */
-  video {
+/* Container needed to position the overlay. Adjust the width as needed */
+video {
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 90vh;
     border-radius: 5em;
     padding: 10px;
     margin: auto;
+
 }
-    
 
-    /*Aligning header and text to images within body*/
-    h2 {
-        text-align: center;
-        justify-content: center;
-        padding-top: 40px;
-    }  
-    
+.container_bubble {
+    display: flex;
+    justify-content: center; /*horizontal center*/
+    align-items: right; /*vertical center*/
+    min-height: absolute; /*full viewport height*/
+    position: relative;
+    left: 17%;
+    z-index: 3; /* Places bubbles above bamboo */
+    flex-direction: column;
+    padding: 5%;
+}
 
-    p {text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        padding-block: 30px;
-        max-width: 500px;
-    }
-    
-        .content-wrapper::after {
-            content:"";
-            clear:both;
-            display:flex;
-            position: absolute;
-        }
-       
-        #rounds {
-             position: relative;
-            z-index: 2;
-        }
 
-       /*Circular images used within body */
-        round1 {
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-right: 100px;
-            margin-left: 10px;
-            float:right;
-            clip-path:circle(50%);
-            shape-outside: circle(20%); 
-        }
-
-        round2 {
-            margin-top: 10px;
-            margin-bottom: 50px;
-            margin-right: 10px;
-            margin-left: 100px;
-            float:left;
-            clip-path:circle(50%);
-            shape-outside: circle(20%);
-        } 
-
-        round3 {
-            margin-top: 10px;
-            margin-bottom: 50px;
-            margin-right: 100px;
-            margin-left: 10px;
-            float:right;
-            clip-path:circle(50%);
-            shape-outside: circle(20%); 
-        }
-
-/*placement of bamboo img to allow overlapping of other texts and imgs*/
-    img[src*="bamboo5"] {
-    position: absolute;
-    z-index: 2;
-    bottom: -38;
-    width: 43.4%;
-    opacity: .40;
-    margin: 10px;
-    }
-
+/* Container for the entire section */
 .content-wrapper {
     position: relative;
-    z-index: 3;
-} 
+    min-height: 100vh;
+}
+
+/* Bamboo background styling */
+.bamboo-background {
+    background-image: url("bamboo5.png");
+    background-size: cover; /* Cover entire area */
+    background-position: center;
+    position: absolute;
+    top: 166%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.bubble {
+    background-color: var(--main-medium);
+    border: none;
+    color: var(--main-very-light);
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 18px;
+    margin: 5%;
+    height: 60vh;
+    max-width: 90vw;
+    width: 67vw;
+    margin: 2 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.bubble-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bubble img {
+    max-height: 50vh;
+    width: auto;
+    object-fit: contain;
+    border-radius: 5%;
+}
+
+/* Text to fit within bubble elements*/
+.bubble h2 {
+    text-align: center;
+    justify-content: right;
+    padding-top: 20px;
+    width: 100%;
+    margin: 0;
+}
+
+/* Text to fit within bubble elements */
+.bubble p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-block: 20px;
+    width: 80%; /* Gives some margin on sides */
+    word-wrap: break-word; /* Prevents text from overflowing */
+}
 
 
-    
-    /*Social media icons within the footer*/
-    social:img {
-        background-color: none;
-        border: none;
-        color: var(--main-very-light);
-        padding-right: 5px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin: 4px  4px;
-        cursor: pointer;
-        border-top-left-radius: 25%;
-        border-top-right-radius: 25%;
-        border-bottom-left-radius: 25%;
-        border-bottom-right-radius: 25%;
-      }
+/*placement of bamboo img to allow overlapping of other texts and imgs*/
+img[src*="bamboo5"] {
+    display: relative;
+    background-image: url("bamboo5.png");
+    z-index: 2;
+    opacity: .40;
+}
 
-    social:hover{
-        background-color: var(--main-medium)
-    }
+/*Social media icons within the footer*/
+social:img {
+    background-color: none;
+    border: none;
+    color: var(--main-very-light);
+    padding-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+}
+
+social:hover {
+    background-color: var(--main-medium)
+}

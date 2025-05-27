@@ -25,18 +25,28 @@ loginForm.addEventListener("submit", async (e) => {
       body: JSON.stringify({ email, password }) // Use correct field names
     });
 
-    const data = await response.json();
+        const data = await response.json();
+        if (data.success) {
+            //if authentication successful
+            localStorage.setItem('loggedIn', 'true');
+            isLoggedIn = true;
 
-    if (response.ok) {
-      // Login successful
-      localStorage.setItem('userId', data.userId);  // Save user ID
-      window.location.href = 'AccountValue.html';   // Redirect to portfolio
-    } else {
-      messageElement.textContent = data.error || "Login failed. Try again.";
+            //store userID to be used in transactions function later. 
+            localStorage.setItem('userId', data.userId);
+            console.log('userid stored:',data.userId);
+
+            //extract username for the URL
+            const displayUsername = username.split('@')[0];
+
+            //redirect to account value page
+            window.location.href = `Account Value.html?user=${encodeURIComponent(displayUsername)}`
+        } else {
+            messageElement.textContent = "Incorrect Username or Password!";
+            isLoggedIn = false;
+        }
+    } catch (err) {
+        console.log('Eror details:', err);
+        messageElement.textContent = "Error occured, please try again";
+        isLoggedIn = false;
     }
-
-  } catch (err) {
-    console.error("Login error:", err);
-    messageElement.textContent = "Server error. Please try again.";
-  }
 });
