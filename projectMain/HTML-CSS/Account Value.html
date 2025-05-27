@@ -9,40 +9,42 @@
 </head>
 
 <body>
-    <header>
-        <!--Header for the page, this elements should use CSS to float so they are side by side-->
-        <div>
-            <div class="logo">
-                <img src="..\img\9.png" alt="logo" href="index.html" width="auto" height="300px">
-            </div>
+  <header>
+    <!--Header for the page, this elements should use CSS to float so they are side by side-->
+    <div>
+      <div class="logo">
+        <a href="index.html"><img src="..\img\9.png" alt="logo" href="index.html"></a>
+      </div>
 
-            <div class="login">
-                <a href="index.html">
-                    <button type="button" onclick="alert('Have a wonderful day!')">Log Out</button>
-                </a>
-            </div>
+      <div class="dropdown">
+        <img src="../img/profileIcon.png" alt="profile icon" width="60" height="60">
+        <div class="dropdown-content">
+          <a href="stockTrading.html">BUY/SELL Stocks</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="index.html" onclick="alert('Have a wonderful day!')">Log Out</a>
         </div>
-        <!--Nav bar, will look more pretty with CSS-->
-        <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-        </nav>
-    </header>
+      </div>
+    </div>
+    <!--Nav bar, will look more pretty with CSS-->
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
 
   <h1 id="usernameDisplay"></h1>
   <script src="../JS/usernameDisplay.js" defer></script>
 
-  <a href="stockTrading.html">
-    <button id="buy_sellPageBTN">Buy/Sell Stocks</button>
-  </a>  
-  <a href="">
-    <button id="portfolioBTN">Portfolio</button>
-  </a>
-  <a href="">
-    <button id="cashBalanceBTN">Cash Balance</button>
-  </a>
+  <div class="accountValueBTNS">
+    <a href="stockTrading.html">
+      <button id="buy_sellPageBTN">Buy/Sell Stocks</button>
+    </a>
+    <a href="transactions.html">
+      <button id="TransBTN">Transactions</button>
+    </a>
+  </div>
 
   <div class="accountValue-wrapper">
     <div id="boxstyle">
@@ -63,26 +65,30 @@
     </div>
   </div>
 
+  <!--Footer for bottom of page-->
+  <!--Includes written out nav bar, contact info, social media buttons, etc.-->
   <footer id="footer">
-        <div id="social">
-            <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png"
-                        alt="fb icon" width="30px" height="30px"></a></social>
-            <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
-                        alt="insta icon" width="30px" height="30px"></a></social>
-            <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
-                        alt="twitter icon" width="30px" height="30px"></a></social>
-        </div>
-        <br/>
-        <br/>
-        <div id="footerNav">
-            <h3><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
-        </div>
-        <br/>
-        <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
-            likenesses to any person, business, or products/services is purely coincidental.
-        </p>
-    </footer>
+    <div id="social">
+      <social style="float:right;"><a href="https://www.facebook.com/"><img src="..\img\creamyfb.png" alt="fb icon"
+            width="30px" height="30px"></a></social>
+      <social style="float:right;"><a href="https://www.instagram.com/"><img src="..\img\creamyinsta.png"
+            alt="insta icon" width="30px" height="30px"></a></social>
+      <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png" alt="twitter icon"
+            width="30px" height="30px"></a></social>
+    </div>
+    <br />
+    <br />
+    <div id="footernav">
+      <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a>
+        | <a href="about.html">About Us</a></h3>
+    </div>
+    <br />
+    <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
+      likenesses to any person, business, or products/services is purely coincidental.
+    </p>
+  </footer>
 
   <script src="stockGraph.js"></script>
 </body>
+
 </html>
