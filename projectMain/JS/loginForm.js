@@ -8,46 +8,35 @@
 //Setting the code to get elements from document
 const loginForm = document.getElementById("loginForm");
 const messageElement = document.getElementById("LoginMessage");
-let isLoggedIn = false;
 
-//set up function to validate the user to log into account
 loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+  // Get form input values
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-    //Call Login API 
-    try {
-        const response = await fetch('http://localhost:3000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username,
-                password
-            })
-        });
+  try {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }) // Use correct field names
+    });
 
-        const data = await response.json();
-        if (data.success) {
-            //if authentication successful
-            localStorage.setItem('loggedIn', 'true');
-            isLoggedIn = true;
+    const data = await response.json();
 
-            //extract username for the URL
-            const displayUsername = username.split('@')[0];
-
-            //redirect to account value page
-            window.location.href = `Account Value.html?user=${encodeURIComponent(displayUsername)}`
-        } else {
-            messageElement.textContent = "Incorrect Username or Password!";
-            isLoggedIn = false;
-        }
-    } catch (err) {
-        console.log('Eror details:', err);
-        messageElement.textContent = "Error occured, please try again";
-        isLoggedIn = false;
+    if (response.ok) {
+      // Login successful
+      localStorage.setItem('userId', data.userId);  // Save user ID
+      window.location.href = 'AccountValue.html';   // Redirect to portfolio
+    } else {
+      messageElement.textContent = data.error || "Login failed. Try again.";
     }
+
+  } catch (err) {
+    console.error("Login error:", err);
+    messageElement.textContent = "Server error. Please try again.";
+  }
 });

@@ -28,7 +28,7 @@ const sql = require('mssql/msnodesqlv8');
 const { NVarChar } = require('msnodesqlv8');
 const config = {
     server: 'localhost',
-    database: 'KAMI_DB',
+    database: 'ProjectKAMIDB',
     driver: 'msnodesqlv8',
     options: {
         trustedConnection: true,
@@ -81,11 +81,11 @@ app.post('/login', async (req, res) => {
 
     try {
         await sql.connect(config);
-        // checking for errors,console.log('Database connected successfully');
+         console.log('Database connected successfully');
 
         const result = await sql.query`SELECT * FROM Users WHERE Email=${username}`;
-        //console.log('Query parameters:', username); // Add this to see what's being searched
-        //console.log('Full query result:', result); // Add this to see complete query response
+        console.log('Query parameters:', username); // Add this to see what's being searched
+        console.log('Full query result:', result); // Add this to see complete query response
 
         const user = result.recordset[0];
         if (user && await bcrypt.compare(password, user.Password)) {
