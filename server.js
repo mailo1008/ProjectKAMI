@@ -28,7 +28,7 @@ const sql = require('mssql/msnodesqlv8');
 const { NVarChar } = require('msnodesqlv8');
 const config = {
     server: 'localhost',
-    database: 'ProjectKAMIDB',
+    database: 'KAMI_DB',
     driver: 'msnodesqlv8',
     options: {
         trustedConnection: true,

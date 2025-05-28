@@ -1,27 +1,29 @@
 <html>
-    <!--Head, these are not present in the main body of the page-->
-    <!--Should link to CSS sheet as well as any external JS code-->
-    <head>
-        <!--LINK STYLE SHEET HERE-->
-        <link rel="stylesheet" href="mainCSS.css">
-        <!--LINK JAVASCRIPT HERE-->
-        <script src="..\JS\stockFunctions.js"></script>
-        <title>KAMI Finance</title>
-    </head>
-    <body>
-        <header>
+<!--Head, these are not present in the main body of the page-->
+<!--Should link to CSS sheet as well as any external JS code-->
+
+<head>
+    <!--LINK STYLE SHEET HERE-->
+    <link rel="stylesheet" href="mainCSS.css">
+    <!--LINK JAVASCRIPT HERE-->
+    <script src="..\JS\stockFunctions.js"></script>
+    <title>KAMI Finance</title>
+</head>
+
+<body>
+    <header>
         <!--Header for the page, this elements should use CSS to float so they are side by side-->
         <div>
             <div class="logo">
                 <a href="index.html"><img src="..\img\9.png" alt="logo" href="index.html"></a>
             </div>
-            <div class="text">
-                <h1>KAMI Finance</h1>
-            </div>
-            <div class="login">
-                <a href="login.html">
-                    <button style="float:right;">Log in</button>
-                </a>
+            <div class="dropdown">
+                <img src="../img/profileIcon.png" alt="profile icon" width="60" height="60">
+                <div class="dropdown-content">
+                    <a href="stockTrading.html">BUY/SELL Stocks</a>
+                    <a href="transactions.html">Transactions</a>
+                    <a href="index.html" onclick="alert('Have a wonderful day!')">Log Out</a>
+                </div>
             </div>
         </div>
         <nav id="nav">
@@ -31,40 +33,41 @@
             <a href="about.html">About Us</a>
         </nav>
     </header>
-        <!--Main body text and images go here-->
-        <h1>Buy/Sell Stock</h1>
-            <br/>
-            <img id="graphImage" style="display:block; margin-left: auto; margin-right: auto;">
-            <div class="container">
-    <form id="tradeForm" onsubmit="handleTrade(event), calculatePreview()">
-        <h4>Buy/Sell</h4>
-        <label class="switch">
-            <input type="checkbox" id="modeToggle" onclick="toggleSellMode()">
-            <span class="slider"></span>
-            <span class="buySell" id="buyingSelling">Buy</span>
-        </label>
-        <br/>
-        <h4>Select Stock</h4>
-        <select name="stock" id="stock" required onchange="calculatePreview()">
-            <option value="">---Select a Stock---</option>
-            <option value="AAPL">Apple (AAPL)</option>
-            <option value="AMZN">Amazon (AMZN)</option>
-            <option value="DASH">Doordash (DASH)</option>
-            <option value="NVDA">NVidia (NVDA)</option>
-        </select>
-        <div id="currentOwned"></div>
-        <div id="currentPrice"></div>
-        <h4>Amount</h4>
-        <input type="number" id="amount" name="amount" min="1" required onchange="calculatePreview()"><br/>
-        <div id="costPreview"></div>
-        <input type="submit" value="Submit Request"><br/>
-    </form>
-    <div id="tradeResult"></div>
-</div>
-            
-        <!--Footer for bottom of page-->
-        <!--Includes written out nav bar, contact info, social media buttons, etc.-->
-        <footer id="footer">
+    <!--Main body text and images go here-->
+    <h1>Buy/Sell Stock</h1>
+    <br />
+    <img id="graphImage" style="display:block; margin-left: auto; margin-right: auto;">
+    <div class="container">
+        <form id="tradeForm" onsubmit="handleTrade(event), calculatePreview()">
+            <h4>Buy/Sell</h4>
+            <label class="switch">
+                <input type="checkbox" id="modeToggle" onclick="toggleSellMode()">
+                <span class="slider"></span>
+                <span class="buySell" id="buyingSelling">Buy</span>
+            </label>
+            <br />
+            <h4>Select Stock</h4>
+            <select name="stock" id="stock" required onchange="calculatePreview()">
+                <option value="">---Select a Stock---</option>
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+                <option value="DASH">Doordash (DASH)</option>
+                <option value="NVDA">NVidia (NVDA)</option>
+            </select>
+            <div id="currentOwned"></div>
+            <div id="currentPrice"></div>
+            <h4>Amount</h4>
+            <input type="number" id="amount" name="amount" min="1" required onchange="calculatePreview()"><br />
+            <div id="costPreview"></div>
+            <input type="submit" value="Submit Request"><br />
+        </form>
+        <div id="tradeResult"></div>
+    </div>
+
+    <!--Footer for bottom of page-->
+    <!--Includes written out nav bar, contact info, social media buttons, etc.-->
+    <footer id="footer">
+
         <head>
             <!--LINK STYLE SHEET HERE-->
             <link rel="stylesheet" href="indexCSS.css">
@@ -79,15 +82,17 @@
             <social style="float:right;"><a href="https://x.com/?lang=en"><img src="..\img\creamytwit.png"
                         alt="twitter icon" width="30px" height="30px"></a></social>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div id="footerNav">
-            <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a> | <a href="about.html">About Us</a></h3>
+            <h3><a href="index.html">Home</a> | <a href="product.html">Products</a> | <a href="contact.html">Contact</a>
+                | <a href="about.html">About Us</a></h3>
         </div>
-        <br/>
+        <br />
         <p>Kami Finance is not a real product and this project was developed for a coding bootcamp. Any
             likenesses to any person, business, or products/services is purely coincidental.
         </p>
     </footer>
-    </body>
+</body>
+
 </html>
