@@ -596,3 +596,12 @@ div .alignitems{
     justify-content: space-between;
     gap: 20px;
 }
+
+.accountValueBTNS {
+    display: flex;
+    justify-content: center;
+}
+
+.accountValueBTNS button{
+    width: 300px;
+}
